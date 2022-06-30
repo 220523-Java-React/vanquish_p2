@@ -5,31 +5,152 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Buddy</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100px;
+            width: 100%;
+            background-color: rgba(255,255,255, .3);
+            backdrop-filter: blur(5px);
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            padding: 5px 50px;
+            
+        }
+        .logo-container {
+            height: 90px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            
+        }
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+        .logo-container img {
+            height: 100%;
+            cursor: pointer;
+            border: 2px solid rgba(54,79,107,255);
+            border-radius: 10px;
+        }
+        .logo-container h1 {
+            margin-left: 20px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 40px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-size: 20px;
+            color: black
+        }
+        .hero {
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('./background.jpg');
+            background-size: cover;
+
+        }
+        .hero .content {
+            padding: 20% 10%;
+        }
+        .hero .content h1 {
+            color:rgba(255,255,255, .87);
+            font-size: 80px;
+            margin-bottom: 30px;
+        }
+        .hero .content h2 {
+            color:rgba(255,255,255, .87);
+            font-size: 60px;
+        }
+        footer {
+            height: 100px;
+            width: 100%;
+            background: black;
+            color: rgba(255,255,255,.87);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        footer h1 {
+            font-size: 60px;
+        }
+    </style>
+
 </head>
 <body>
-    <img src="Untitled.png" alt ="Logo" height="200px" width="200px" class="center">
-    <h1>
-        Welcome to HEALTH BUDDY
-    </h1>
-    <h2>
-        Take Charge Of Your Health
-    </h2>
-    <p>Are you having trouble with maintining your diet? Do you no know where to start? We look no futher. I am HEALTH BUDDY and I am here to help. Think of me as your personal dietitian. I am here to push you towards your health goals every step of the way.</p>
-    <h3>
-        Log In
-    </h3>
-    <h4>
-        Username
-    </h4>
-    <h4>
-        Password
-    </h4>
-    <a href="userInput.html">User Input</a>
-    <a href="bodyInfo.html">Body Info</a>
-    <a href="bodyFeedback.html">Body Feedback</a>
-    <a href="progress.html">Progress</a>
-    <a href="nutrients.html">Nutrients</a>
-    <a href="vitamins.html">Vitamins</a>
-    <a href="minerals.html">Minerals</a>
+    
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="Health Buddy - Logo.png" alt ="Logo" />
+                <h1>
+                    Health Buddy
+                </h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Login">Login</a></li>
+                    <li><a href="#Feedback">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div class="hero">
+            <div class="content">
+                <h1>
+                    Welcome to Health Buddy
+                </h1>
+                <h2>
+                    Take Charge Of Your Health
+                </h2>
+            </div>
+        </div>
+        
+        
+        <p>Are you having trouble with maintining your diet? Do you no know where to start? We look no futher. I am HEALTH BUDDY and I am here to help. Think of me as your personal dietitian. I am here to push you towards your health goals every step of the way.</p>
+        <h3>
+            Log In
+        </h3>
+        <h4>
+            Username
+        </h4>
+        <h4>
+            Password
+        </h4>
+        <a href="userInput.html">User Input</a>
+        <a href="bodyInfo.html">Body Info</a>
+        <a href="bodyFeedback.html">Body Feedback</a>
+        <a href="progress.html">Progress</a>
+        <a href="nutrients.html">Nutrients</a>
+        <a href="vitamins.html">Vitamins</a>
+        <a href="minerals.html">Minerals</a>
+    </section>
+    <footer>
+        <h1>
+            THIS IS THE FOOTER
+        </h1>
+    </footer>
+    
 </body>
 </html>
