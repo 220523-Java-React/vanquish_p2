@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,26 +41,56 @@
     <h2>
         Minerals
     </h2>
-    <p><a href="https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/">Choline</a> is an essential nutrient that is naturally present in some foods and available as a dietary supplement. Choline is a source of methyl groups needed for many steps in metabolism.</p>
-    <p><a href="https://www.eatright.org/food/vitamins-and-supplements/types-of-vitamins-and-nutrients/magnesium">Magnesium</a> is an important part of the more than 300 enzymes found in your body. These enzymes are involved in processes that help to regulate many bodily functions, including the production of energy, body protein and muscle contractions.</p>
-    <p><a href="https://ods.od.nih.gov/factsheets/Calcium-Consumer/">Calcium</a> is a mineral your body needs to build and maintain strong bones and to carry out many important functions. Calcium is the most abundant mineral in the body.</p>
-    <p><a href="https://www.mayoclinic.org/drugs-supplements-zinc/art-20366112">Zinc</a> Zinc, a nutrient found throughout your body, helps your immune system and metabolism function. Zinc is also important to wound healing and your sense of taste and smell.</p>
-    <p><a href="https://ods.od.nih.gov/factsheets/Iron-Consumer/">Iron</a> is a mineral that the body needs for growth and development. Your body uses iron to make hemoglobin, a protein in red blood cells that carries oxygen from the lungs to all parts of the body, and myoglobin, a protein that provides oxygen to muscles.</p>
-    <p><a href="https://www.britannica.com/science/copper">Copper</a>  (Cu), chemical element, a reddish, extremely ductile metal of Group 11 (Ib) of the periodic table that is an unusually good conductor of electricity and heat. Copper is found in the free metallic state in nature</p>
-    <p><a href="https://www.webmd.com/a-to-z-guides/supplement-guide-selenium">Selenium</a> is a mineral found in the soil. Selenium naturally appears in water and some foods. While people only need a very small amount, selenium plays a key role in their metabolism.</p>
-    <p><a href="https://www.mountsinai.org/health-library/supplement/manganese">Maganese</a> is a trace mineral that is present in tiny amounts in the body. It is found mostly in bones, the liver, kidneys, and pancreas. Manganese helps the body form connective tissue, bones, blood clotting factors, and sex hormones. It also plays a role in fat and carbohydrate metabolism, <br>
-        calcium absorption, and blood sugar regulation. Manganese is also necessary for normal brain and nerve function.</p>
-    <p><a href="https://www.kidney.org/atoz/content/phosphorus"> Phosphorus</a> - is a mineral found in your bones. Along with calcium, phosphorus is needed to build strong healthy bones, as well as, keeping other parts of your body healthy.</p>
-    <p><a href="https://medlineplus.gov/potassium.html">Potassium</a> is a mineral that your body needs to work properly. It is a type of electrolyte. It helps your nerves to function and muscles to contract. It helps your heartbeat stay regular. It also helps move nutrients into cells and waste products out of cells. A diet rich in potassium helps to offset some of sodium's harmful effects on blood pressure.</p>
-    <p><a href="https://ods.od.nih.gov/factsheets/Iodine-Consumer/">Iodine</a> is a mineral found in some foods. The body needs iodine to make thyroid hormones. These hormones control the body’s metabolism and many other important functions. The body also needs thyroid hormones for proper bone and brain development during pregnancy and infancy. Getting enough iodine is important for everyone, especially infants and women who are pregnant.</p>
-    <p><a href="https://www.webmd.com/diet/supplement-guide-chromium">Chromium</a> specifically, trivalent chromium -- is an essential trace element that's used by some people as a supplement. Perhaps most importantly, chromium forms a compound in the body that seems to enhance the effects of insulin and lower glucose levels. However, it also had risks and its use is somewhat controversial.</p>
-    <p><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1249/molybdenum">Molybdenum</a> is an essential trace mineral. It is found in foods such as milk, cheese, cereal grains, legumes, nuts, leafy vegetables, and organ meats. <br>
-        Molybdenum works in the body to break down proteins and other substances. Molybdenum deficiency is very uncommon.</p>
-    <p><a href="https://www.cdc.gov/fluoridation/faqs/about-fluoride.html">Fluoride</a>  is a mineral that occurs naturally and is released from rocks into the soil, water, and air. Almost all water contains some fluoride, but usually not enough to prevent tooth decay.<br>
-        Fluoride can also be added to drinking water supplies as a public health measure for reducing cavities. Decisions about adding fluoride to drinking water are made at the state or local level.</p>
-    <p>Salt, also known as <a href="https://www.hsph.harvard.edu/nutritionsource/salt-and-sodium/">sodium</a> chloride, is about 40% sodium and 60% chloride. It flavors food and is used as a binder and stabilizer. It is also a food preservative, as bacteria can’t thrive in the presence of a high amount of salt. The human body requires a small amount of sodium to conduct nerve impulses, contract and relax muscles, and maintain the proper balance of water and minerals</p>
-    <p><a href="https://www.webmd.com/a-to-z-guides/what-is-a-chloride-test">Chloride</a> You may have heard of electrolytes and the role they play in keeping you hydrated and healthy.
-        One of the most important of these electrically charged minerals is chloride. It works with other electrolytes, such as sodium and potassium, to help balance acids and bases in your body.</p>
+    <button type="button" class="collapsible">Choline</button>
+    <div class="content"><p><a href="https://ods.od.nih.gov/factsheets/Choline-HealthProfessional/">Choline</a> is an essential nutrient that is naturally present in some foods and available as a dietary supplement. Choline is a source of methyl groups needed for many steps in metabolism.</p></div>
+
+    <button type="button" class="collapsible">Magnesium</button>
+    <div class="content"><p><a href="https://www.eatright.org/food/vitamins-and-supplements/types-of-vitamins-and-nutrients/magnesium">Magnesium</a> is an important part of the more than 300 enzymes found in your body. These enzymes are involved in processes that help to regulate many bodily functions, including the production of energy, body protein and muscle contractions.</p></div>
+
+    <button type="button" class="collapsible">Calcium</button>
+    <div class="content"> <p><a href="https://ods.od.nih.gov/factsheets/Calcium-Consumer/">Calcium</a> is a mineral your body needs to build and maintain strong bones and to carry out many important functions. Calcium is the most abundant mineral in the body.</p></div>
+
+    <button type="button" class="collapsible">Zinc</button>
+    <div class="content"> <p><a href="https://www.mayoclinic.org/drugs-supplements-zinc/art-20366112"></a> Zinc, a nutrient found throughout your body, helps your immune system and metabolism function. Zinc is also important to wound healing and your sense of taste and smell.</p></div>
+
+    <button type="button" class="collapsible">Iron</button>
+    <div class="content"><p><a href="https://ods.od.nih.gov/factsheets/Iron-Consumer/">Iron</a> is a mineral that the body needs for growth and development. Your body uses iron to make hemoglobin, a protein in red blood cells that carries oxygen from the lungs to all parts of the body, and myoglobin, a protein that provides oxygen to muscles.</p></div>
+
+    <button type="button" class="collapsible">Copper</button>
+    <div class="content"> <p><a href="https://www.britannica.com/science/copper">Copper</a>  (Cu), chemical element, a reddish, extremely ductile metal of Group 11 (Ib) of the periodic table that is an unusually good conductor of electricity and heat. Copper is found in the free metallic state in nature</p></div>
+
+    <button type="button" class="collapsible">Selenium</button>
+    <div class="content"> <p><a href="https://www.webmd.com/a-to-z-guides/supplement-guide-selenium">Selenium</a> is a mineral found in the soil. Selenium naturally appears in water and some foods. While people only need a very small amount, selenium plays a key role in their metabolism.</p></div>
+
+    <button type="button" class="collapsible">Manganese</button>
+    <div class="content"> <p><a href="https://www.mountsinai.org/health-library/supplement/manganese">Maganese</a> is a trace mineral that is present in tiny amounts in the body. It is found mostly in bones, the liver, kidneys, and pancreas. Manganese helps the body form connective tissue, bones, blood clotting factors, and sex hormones. It also plays a role in fat and carbohydrate metabolism, <br>
+        calcium absorption, and blood sugar regulation. Manganese is also necessary for normal brain and nerve function.</p></div>
+
+    <button type="button" class="collapsible">Phosphorus</button>
+    <div class="content"> <p><a href="https://www.kidney.org/atoz/content/phosphorus"> Phosphorus</a> - is a mineral found in your bones. Along with calcium, phosphorus is needed to build strong healthy bones, as well as, keeping other parts of your body healthy.</p></div>
+
+    <button type="button" class="collapsible">Potassium</button>
+    <div class="content"><p><a href="https://medlineplus.gov/potassium.html">Potassium</a> is a mineral that your body needs to work properly. It is a type of electrolyte. It helps your nerves to function and muscles to contract. It helps your heartbeat stay regular. It also helps move nutrients into cells and waste products out of cells. A diet rich in potassium helps to offset some of sodium's harmful effects on blood pressure.</p></div>
+
+    <button type="button" class="collapsible">Iodine</button>
+    <div class="content"> <p><a href="https://ods.od.nih.gov/factsheets/Iodine-Consumer/">Iodine</a> is a mineral found in some foods. The body needs iodine to make thyroid hormones. These hormones control the body’s metabolism and many other important functions. The body also needs thyroid hormones for proper bone and brain development during pregnancy and infancy. Getting enough iodine is important for everyone, especially infants and women who are pregnant.</p></div>
+    <button type="button" class="collapsible">Chromium</button>
+    <div class="content">   <p><a href="https://www.webmd.com/diet/supplement-guide-chromium">Chromium</a> specifically, trivalent chromium -- is an essential trace element that's used by some people as a supplement. Perhaps most importantly, chromium forms a compound in the body that seems to enhance the effects of insulin and lower glucose levels. However, it also had risks and its use is somewhat controversial.</p></div>
+
+    <button type="button" class="collapsible">Molhybdenum</button>
+    <div class="content">  <p><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1249/molybdenum">Molybdenum</a> is an essential trace mineral. It is found in foods such as milk, cheese, cereal grains, legumes, nuts, leafy vegetables, and organ meats. <br>
+        Molybdenum works in the body to break down proteins and other substances. Molybdenum deficiency is very uncommon.</p></div>
+
+    <button type="button" class="collapsible">Fluoride</button>
+    <div class="content">  <p><a href="https://www.cdc.gov/fluoridation/faqs/about-fluoride.html">Fluoride</a>  is a mineral that occurs naturally and is released from rocks into the soil, water, and air. Almost all water contains some fluoride, but usually not enough to prevent tooth decay.<br>
+        Fluoride can also be added to drinking water supplies as a public health measure for reducing cavities. Decisions about adding fluoride to drinking water are made at the state or local level.</p></div>
+
+    <button type="button" class="collapsible">Sodium</button>
+    <div class="content"><p>Salt, also known as <a href="https://www.hsph.harvard.edu/nutritionsource/salt-and-sodium/">sodium</a> chloride, is about 40% sodium and 60% chloride. It flavors food and is used as a binder and stabilizer. It is also a food preservative, as bacteria can’t thrive in the presence of a high amount of salt. The human body requires a small amount of sodium to conduct nerve impulses, contract and relax muscles, and maintain the proper balance of water and minerals</p></div>
+
+    <button type="button" class="collapsible">Chloride</button>
+    <div class="content"><p><a href="https://www.webmd.com/a-to-z-guides/what-is-a-chloride-test">Chloride</a> You may have heard of electrolytes and the role they play in keeping you hydrated and healthy.
+        One of the most important of these electrically charged minerals is chloride. It works with other electrolytes, such as sodium and potassium, to help balance acids and bases in your body.</p></div>
     <a href="index.html">Log In</a>
     <a href="userInput.html">User Input</a>
     <a href="bodyInfo.html">Body Info</a>
@@ -42,5 +98,24 @@
     <a href="progress.html">Progress</a>
     <a href="nutrients.html">Nutrients</a>
     <a href="vitamins.html">Vitamins</a>
+
+    <script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+
 </body>
 </html>
