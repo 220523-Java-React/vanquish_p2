@@ -1,17 +1,19 @@
+import LoginForm from "./LoginForm";
+
 export default function Header(logo) {
     return (
       <>
         <div className="App">
           <header>
             <div class="header-container">
-              <div class="logo-container">
+              <div class="logo-container" >
                 <img src={logo} alt ="Logo" />
                 <h1>Health Buddy</h1>
               </div>
               <nav>
                 <ul>
                   <li><a href="#Home">Home</a></li>
-                  <li><a href="#Login">Login</a></li>
+                  <li><LoginForm /></li>
                   <li><a href="#Feedback">Feedback</a></li>
                 </ul>
               </nav>
