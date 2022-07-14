@@ -11,13 +11,8 @@ function App() {
        
       <Header  />
       <Progress />
-      
-      
     </>
   );
 }
-
-
-
 
 export default App;

@@ -76,8 +76,6 @@ const molhybdenum = {
     url: "https://www.webmd.com/vitamins/ai/ingredientmono-1249/molybdenum"
 }
 
-
-
 const flouride = {
     name: "Fluoride",
     description: "Fluoride is a mineral that occurs naturally and is released from rocks into the soil, water, and air. Almost all water contains some fluoride, but usually not enough to prevent tooth decay. Fluoride can also be added to drinking water supplies as a public health measure for reducing cavities. Decisions about adding fluoride to drinking water are made at the state or local level.",
@@ -95,3 +93,5 @@ const chloride = {
     description: "You may have heard of electrolytes and the role they play in keeping you hydrated and healthy. One of the most important of these electrically charged minerals is chloride. It works with other electrolytes, such as sodium and potassium, to help balance acids and bases in your body.",
     url: "https://www.webmd.com/a-to-z-guides/what-is-a-chloride-test"
 }
+
+
