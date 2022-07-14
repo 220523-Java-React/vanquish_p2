@@ -1,6 +1,7 @@
 import LoginForm from "./LoginForm";
+import logo from '../assets/images/Health Buddy - Logo.png';
 
-export default function Header(logo) {
+export default function Header() {
     return (
       <>
         <div className="App">
