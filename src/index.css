@@ -38,7 +38,7 @@ header {
     border: 2px solid rgba(54,79,107,255);
     border-radius: 10px;
 }
-.logo-container h1 {
+/* .logo-container h1 {
     margin-left: 20px;
 }
 nav ul {
@@ -52,7 +52,7 @@ nav ul li a {
     text-decoration: none;
     font-size: 20px;
     color: black
-}
+} */
 .hero {
     height: 100vh;
     overflow: hidden;
