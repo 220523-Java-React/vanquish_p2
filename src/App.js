@@ -1,52 +1,42 @@
-import {BrowserRouter, Router, Route} from "react-router-dom"
-import './App.css';
-import logo from './assets/images/Health Buddy - Logo.png';
-import Progress from './progress';
-import NavMenu from './components/NavMenu';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
+
+import Home from './pages/Home';
+import BodyFeedback from './pages/BodyFeedback';
+import BodyInfo from './pages/BodyInfo';
+import Minerals from './pages/Minerals';
+import Nutrients from './pages/Nutrients';
+import Progress from './pages/Progress';
+import UserInput from './pages/UserInput';
+import Vitamins from './pages/Vitamins';
+
 import Header from './components/Header';
-import LoginForm from './components/LoginForm';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
-      <Header  />
-      <Progress />
+      <Router>
+        <Header  />
+
+        <Routes>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/body-feedback' component={BodyFeedback} />
+          <Route exact path='/body-info' component={BodyInfo} />
+          <Route exact path='/minerals' component={Minerals} />
+          <Route exact path='/nutrients' component={Nutrients} />
+          <Route exact path='/progress' component={Progress} />
+          <Route exact path='/user-input' component={UserInput} />
+          <Route exact path='/vitamins' component={Vitamins} />
+        </Routes>
+
+        <Footer />
+      </Router>
     </>
   );
 }
-
-/*
-function App(){
-return (
-<BrowserRouter>
-  <Routes>
-    <Route path="/" element={<HomePage />} />
-    <Route path="/flashcards" element={<FlashcardsPage />} />
-    <Route path="/login" element={<LoginPage />} />
-  </Routes>
-</BrowserRouter>
-);
-}
-
-*/
-
-/*
-if - Home page before login or logged out
-  - register
-  - log in
-  - home page, about, contact
-
-if - page after register
-  - user input
-  - then to page after login
-
-if - page after login
-  - weekly user input if it's called (set 7 days after last week's input or every monday or tuesday, etc)
-  - body feedback
-  - body info
-  - progress
-  - minerals, nutrients, vitamins
-
-*/
 
 export default App;
