@@ -21,16 +21,16 @@ function App() {
     <>
       <Router>
         <Header  />
-
+        
         <Routes>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/body-feedback' component={BodyFeedback} />
-          <Route exact path='/body-info' component={BodyInfo} />
-          <Route exact path='/minerals' component={Minerals} />
-          <Route exact path='/nutrients' component={Nutrients} />
-          <Route exact path='/progress' component={Progress} />
-          <Route exact path='/user-input' component={UserInput} />
-          <Route exact path='/vitamins' component={Vitamins} />
+          <Route path='/' element={<Home />} />
+          <Route path='/body-feedback' element={<BodyFeedback />} />
+          <Route path='/body-info' element={<BodyInfo />} />
+          <Route path='/minerals' element={<Minerals />} />
+          <Route path='/nutrients' element={<Nutrients />} />
+          <Route path='/progress' element={<Progress />} />
+          <Route path='/user-input' element={<UserInput />} />
+          <Route path='/vitamins' element={<Vitamins />} />
         </Routes>
 
         <Footer />
