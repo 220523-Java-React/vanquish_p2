@@ -27,7 +27,7 @@ export default function LoginForm(){
     return <>
     <input type="text" value={username} onChange={handleChangeUsername} placeholder="username"/><br/>
     <input type="password" value={password} onChange={handleChangePassword} placeholder="password"/><br/>
-    <button onClick={submit}>login</button> 
+    <button onClick={submit}>Login</button> 
     <button onClick={signup}>Sign up</button>
     </>
 }
