@@ -1,8 +1,15 @@
-import React from 'react';
+import NavMenu from '../components/NavMenu';
 
 const Progress = () => {
   return (
-    <div>Progress</div>
+    <>
+      <div style={{fontSize: '200px'}}>Progress</div>
+
+      <NavMenu />
+      
+      <p>Here is your progress your last entry.</p>
+      <h2>Progress</h2>
+    </>
   );
 };
 

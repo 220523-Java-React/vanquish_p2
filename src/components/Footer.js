@@ -2,7 +2,12 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <>
+      <footer>
+        <small>Copyright &copy; Vanquish House 2022</small>
+      </footer>
+    </>
+    
   );
 };
 

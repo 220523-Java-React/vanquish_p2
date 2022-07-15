@@ -1,8 +1,13 @@
-import React from 'react';
+import NavMenu from '../components/NavMenu';
 
 const minerals = () => {
   return (
-    <div>minerals</div>
+    <>
+      <div style={{fontSize: '200px'}}>Minerals</div>
+
+      <NavMenu />
+      
+    </>
   );
 };
 

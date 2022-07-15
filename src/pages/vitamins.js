@@ -1,8 +1,13 @@
-import React from 'react';
+import NavMenu from "../components/NavMenu";
 
 const Vitamins = () => {
   return (
-    <div>Vitamins</div>
+    <>
+      <div style={{fontSize: '200px'}}>Vitamins</div>
+
+      <NavMenu />
+      
+    </>
   );
 };
 
