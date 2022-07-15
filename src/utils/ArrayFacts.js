@@ -1,6 +1,6 @@
 //Alternative object arrays
 
-const minerals = [
+export const minerals = [
     {
         name: "Choline",
         description: "Choline is an essential nutrient that is naturally present in some foods and available as a dietary supplement. Choline is a source of methyl groups needed for many steps in metabolism.",
@@ -172,4 +172,6 @@ const vitamins = [
         description: "Vitamin B9, more commonly known as folate (naturally-occurring form of B9) or folic acid (a synthetic form), is a water-soluble vitamin that is part of the B vitamin family. B vitamins and folate help support adrenal function, help calm and maintain a healthy nervous system, and are necessary for key metabolic processes. Folate occurs naturally in foods, while folic acid is the synthetic form of folate.",
         url: "https://www.drweil.com/vitamins-supplements-herbs/vitamins/vitamin-b9/"
     }
+   
 ]
+ 
