@@ -12,6 +12,8 @@ import Nutrients from './pages/Nutrients';
 import Progress from './pages/Progress';
 import UserInput from './pages/UserInput';
 import Vitamins from './pages/Vitamins';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -21,9 +23,11 @@ function App() {
     <>
       <Router>
         <Header  />
-        
+
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
           <Route path='/body-feedback' element={<BodyFeedback />} />
           <Route path='/body-info' element={<BodyInfo />} />
           <Route path='/minerals' element={<Minerals />} />
