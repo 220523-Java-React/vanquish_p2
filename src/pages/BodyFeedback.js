@@ -3,7 +3,7 @@ import NavMenu from '../components/NavMenu';
 const BodyFeedback = () => {
   return (
     <>
-      <div style={{fontSize: '200px'}}>BodyFeedback</div>
+      <div style={{fontSize: '200px', marginTop: '100px'}}>BodyFeedback</div>
 
       <NavMenu />
       <section>

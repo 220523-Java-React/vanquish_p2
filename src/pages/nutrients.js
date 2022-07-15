@@ -3,7 +3,7 @@ import NavMenu from '../components/NavMenu';
 const Nutrients = () => {
   return (
     <>
-      <div style={{fontSize: '200px'}}>Nutrients</div>
+      <div style={{fontSize: '200px', marginTop: '100px'}}>Nutrients</div>
 
       <NavMenu />
       

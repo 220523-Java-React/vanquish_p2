@@ -76,6 +76,19 @@ const NavMenu = () => {
             </MaterialLink>
           </Grid>
 
+          <Grid item>
+            <MaterialLink
+              to='/user-input'
+              component={RouterLink}
+              underline='none'
+              variant='body1'
+            >
+              <Typography style={{fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase', color: 'black'}}>
+                User Input
+              </Typography>
+            </MaterialLink>
+          </Grid>
+
         </Grid>  
       </nav>
     </Grid>

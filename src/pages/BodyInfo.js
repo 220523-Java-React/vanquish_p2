@@ -3,7 +3,7 @@ import NavMenu from '../components/NavMenu';
 const BodyInfo = () => {
   return (
     <>
-      <div style={{fontSize: '200px'}}>BodyInfo</div>
+      <div style={{fontSize: '200px', marginTop: '100px'}}>BodyInfo</div>
 
       <NavMenu />
 
