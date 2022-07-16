@@ -13,21 +13,24 @@ header {
     background-color: rgba(255,255,255, .3);
     backdrop-filter: blur(5px);
 }
-.header-container {
+.header-container,
+.header-container-dark {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
     width: 100%;
     padding: 5px 50px;
-    
+}
+.header-container-dark {
+    background-color: rgb(40,40,40);
+    color: rgba(255,255,255, .87);
 }
 .logo-container {
     height: 90px;
     display: flex;
     align-items: center;
     overflow: hidden;
-    
 }
 .logo-container:hover {
     transform: scale(1.05);
@@ -53,6 +56,12 @@ nav ul li a {
     font-size: 20px;
     color: black
 } */
+.header-text {
+    color:black;
+}
+.header-dark-text {
+    color:rgba(255,255,255, .87);
+}
 .hero {
     height: 100vh;
     overflow: hidden;
