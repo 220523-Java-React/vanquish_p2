@@ -7,11 +7,11 @@ import {
 import Home from './pages/Home';
 import BodyFeedback from './pages/BodyFeedback';
 import BodyInfo from './pages/BodyInfo';
-import Minerals from './pages/Minerals';
-import Nutrients from './pages/Nutrients';
+import Minerals from './pages/minerals';
+import Nutrients from './pages/nutrients';
 import Progress from './pages/Progress';
 import UserInput from './pages/UserInput';
-import Vitamins from './pages/Vitamins';
+import Vitamins from './pages/vitamins';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
