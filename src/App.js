@@ -21,7 +21,7 @@ import Footer from './components/Footer';
 
 function App() {
 
-  const [ results, setResults ] = useState([{}]);
+  const [ results, setResults ] = useState([]);
 
   return (
     <>
