@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -19,6 +20,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
+
+  const [ results, setResults ] = useState([{}]);
+
   return (
     <>
       <Router>
@@ -28,12 +32,12 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/body-feedback' element={<BodyFeedback />} />
+          <Route path='/body-feedback' element={<BodyFeedback results={results}/>} />
           <Route path='/body-info' element={<BodyInfo />} />
           <Route path='/minerals' element={<Minerals />} />
           <Route path='/nutrients' element={<Nutrients />} />
           <Route path='/progress' element={<Progress />} />
-          <Route path='/user-input' element={<UserInput />} />
+          <Route path='/user-input' element={<UserInput setResults={setResults} />} />
           <Route path='/vitamins' element={<Vitamins />} />
         </Routes>
 

@@ -1,6 +1,7 @@
 import NavMenu from '../components/NavMenu';
 
-const BodyFeedback = () => {
+const BodyFeedback = ({results}) => {
+
   return (
     <>
       <div style={{fontSize: '200px', marginTop: '100px'}}>BodyFeedback</div>
