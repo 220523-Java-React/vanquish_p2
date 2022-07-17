@@ -5,12 +5,16 @@ import {
   Box,
   Link
 } from '@mui/material';
+import Calculator from '../utils/UpdateMinerals';
 
 const Minerals = () => {
   return (
     <>
       <div style={{fontSize: '200px', marginTop: '100px'}}>Minerals</div>
-        
+      <NavMenu />
+      <br></br>
+      <br></br>
+        <Calculator />
         <section>
           {minerals.map((mineral, index) => (
             <Box key={index}>
@@ -20,7 +24,7 @@ const Minerals = () => {
           ))}
         </section>       
 
-      <NavMenu />
+       
       
     </>
   );
