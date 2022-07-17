@@ -78,7 +78,7 @@ export const minerals = [
     }
 ];
 
-const nutrients = [
+export const nutrients = [
     {
         name: "Calories",
         description: "Calories are essential for fueling the body. Whether you are trying to lose, maintain, or gain weight, tracking and understanding the science behind caloric intake is very important.",
@@ -106,7 +106,7 @@ const nutrients = [
     }
 ]
 
-const vitamins = [
+export const vitamins = [
     {
         name: "Vitamin A",
         description: "Vitamin A is the name of a group of fat-soluble retinoids, primarily retinol and retinyl esters [1,2]. Vitamin A is involved in immune function, cellular communication, growth and development, and male and female reproduction.",

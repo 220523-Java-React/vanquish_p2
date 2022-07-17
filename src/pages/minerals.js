@@ -1,5 +1,5 @@
 import NavMenu from '../components/NavMenu';
-import { minerals } from '../utils/ArrayFacts';
+import { minerals } from '../utils/resourceFacts';
 import { 
   Typography,
   Box,
