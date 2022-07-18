@@ -1034,7 +1034,7 @@
             planInfo = "Gain Fast";
         }
 
-
+/*
         console.log();
         console.log("User Input");
         console.log("Unit Of Measure: " + measurementInfo);
@@ -1117,7 +1117,7 @@
         console.log("Fluoride: " + fluoride + "mg");
         console.log("Sodium: " + sodium + "mg");
         console.log("Chloride: " + chloride + "g");
-
+*/
 
 
 
