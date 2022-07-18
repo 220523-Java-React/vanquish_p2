@@ -461,46 +461,246 @@ function MineralsAndVitamins(props) {
 
     
   }
+
+ function Bmi(props){
+  let bmi = (700 * props.weight) / (props.height * props.height);
+  let bmimetric = (props.weight / (props.height * props.height)) * 10000;
+  var bmiread = "Based on your BMI, You Are: ";
+  if(bmi < 15)
+       bmiread += "Very Severly Undweight.";
+       if (bmi >= 15 && bmi < 16) bmiread += "Severely Underweight.";
+    if (bmi >= 16 && bmi < 18.5) bmiread += "Underweight.";
+    if (bmi >= 18.5 && bmi < 25) bmiread += "Normal.";
+    if (bmi > 25 && bmi < 30) bmiread += "Overweight.";
+    if (bmi >= 30 && bmi < 35) bmiread += "Moderately Obese.";
+    if (bmi >= 35 && bmi < 40) bmiread += "Severely Obese.";
+    if (bmi >= 40) bmiread += "Very Severely Obese.";
+  
+  
+  return <p>bmi U.S: {bmi}<br></br>
+  bmi Metric: {bmimetric}<br></br>
+  {bmiread}</p>;
+  
+   
+ }
+
+ function Bfp(props){
+  let bfp = (495 / (1.0324 - 0.19077 * Math.log10((props.waist - props.neck)* props.hscale) + 0.15456 * Math.log10(props.height))) - 450;
+  
+  let bfpfemale = (495 / (1.29579 - 0.35004 * Math.log10((props.waist + props.hip - props.neck)*props.hscale) + 0.22100 * Math.log10(props.height))) - 450;
+ 
+  var bfread = "Based On Your Body Fat Percentage, You ";
+  let mbf = 0;
+
+if(props.gender === 1) mbf = 7;
+
+if (bfp < (14-mbf)) bfread += "Have Only Essential Fat.";
+if (bfp >= (14-mbf) && bfp < (21-mbf)) bfread += "Are An Athlete.";
+if (bfp >= (21-mbf) && bfp < (25-mbf)) bfread += "Are Fit";
+if (bfp >= (25-mbf) && bfp < (32-mbf)) bfread += "Are Average";
+if (bfp >= (32-mbf)) bfread += "Are Obese";
+
+
+  return <p>Male BodyFatPercentage: {bfp}<br></br>
+  Female BodyFatPercentage: {bfpfemale}<br></br>
+  {bfread}</p>;
+
+ 
+ }
+
+ function Ibw(props){
+
+  let ibwmale = (50 + (0.91 * ((props.height * props.hscale) - 152.4))) * props.wscale;
+  let ibwfemale = (45.5 + (0.91 * ((props.height * props.hscale) - 152.4))) * props.wscale;
+
+  return <p>Male ibw: {ibwmale}<br></br>
+  Female ibw: {ibwfemale}</p>;
+
+ }
+
+ function Bsa(props){
+  let bsa = Math.sqrt(((props.height * props.hscale) * (props.weight / props.wscale)) / 3600);
+
+  return <p>BSA : {bsa}</p>;
+
+ }
+
+ function Bmr(props){
+     let bmrmale = 66 + (6.3 * (props.weight / props.wscale)) + (12.9 * (props.height / props.hscale)) - (6.8 * props.age);
+
+     let bmrfemale = 655 + (4.3 * (props.weight / props.wscale)) + (4.7 * (props.height / props.hscale)) - (4.7 * props.age);
+
+     return <p>BMR male: {bmrmale}<br></br>
+     BMR female: {bmrfemale}</p>;
+ }
+
+ function WaistToHeight(props){
+  var wheread = "Based On Your Waist To Height Ratio, You Are "
+  var whe = props.waist / props.height;
+
+let mwhe = 1; 
+if(props.gender === 1) mwhe = 0.92;
+
+if (whe >= (0.58/mwhe)) wheread += "Highly Obese.";
+if (whe < (0.58/mwhe) && whe >= (0.54/mwhe)) wheread += "Extremely Overweight.";
+if (whe < (0.54/mwhe) && whe >= (0.49/mwhe)) wheread += "Overweight.";
+if (whe < (0.49/mwhe) && whe >= 0.46) wheread += "Healthy.";
+if (whe < 0.46 && whe >= 0.42) wheread += "Slender And Healthy.";
+if (whe < 0.42 && whe >= 0.35) wheread += "Extremely Slim.";
+if (whe < 0.35) wheread += "Abnormally Slim.";
+
+return <p>{wheread}</p>
+ }
+
+ function WaistToHip(props){
+
+  var whi = props.waist/props.hip;
+  var whiread = "Your Waist To Hip Ratio Is "
+
+let mwhi = 0
+if(props.gender === 1) mwhi = 0.1;
+
+if (whi < (0.85-mwhi)) whiread += "Excellent.";
+if (whi >= (0.85-mwhi) && whi < (0.90-mwhi)) whiread += "Good.";
+if (whi >= (0.90-mwhi) && whi < (0.95-mwhi)) whiread += "Average.";
+if (whi >= (0.95-mwhi)) whiread += "Bad.";
+return <p>{whiread}</p>
+ }
+
+
   
   class Calculator extends React.Component {
     constructor(props) {
       super(props);
-      this.handleChange = this.handleChange.bind(this);
-      this.handleChangeTwo = this.handleChangeTwo.bind(this);
+      this.handleChangeAge = this.handleChangeAge.bind(this);
+      this.handleChangeGender = this.handleChangeGender.bind(this);
+      this.handleChangeHeight = this.handleChangeHeight.bind(this);
+      this.handleChangeWeight = this.handleChangeWeight.bind(this);
+      this.handleChangeWaist = this.handleChangeWaist.bind(this);
+      this.handleChangeNeck = this.handleChangeNeck.bind(this);
+      this.handleChangeHip = this.handleChangeHip.bind(this);
+      this.handleChangeHscale = this.handleChangeHscale.bind(this);
+      this.handleChangeWscale = this.handleChangeWscale.bind(this);
       this.state = {age: ''};
       this.state ={gender: ''};
+      this.state = {height: ''};
+      this.state ={weight: ''};
+      this.state = {waist: ''};
+      this.state ={neck: ''};
+      this.state = {hip: ''};
+      this.state = {hscale: ''};
+      this.state = {wscale: ''};
+     
     }
   
-    handleChange(e) {
+    handleChangeAge(e) {
       this.setState({age: e.target.value});
     }
     
-      handleChangeTwo(f) {
-      this.setState({gender: f.target.value});
+      handleChangeGender(e) {
+      this.setState({gender: e.target.value});
+    }
+
+    handleChangeHeight(e) {
+      this.setState({height: e.target.value});
+    }
+    
+      handleChangeWeight(e) {
+      this.setState({weight: e.target.value});
+    }
+
+    handleChangeWaist(e) {
+      this.setState({waist: e.target.value});
+    }
+    
+      handleChangeNeck(e) {
+      this.setState({neck: e.target.value});
+    }
+
+    handleChangeHip(e) {
+      this.setState({hip: e.target.value});
+    }
+    handleChangeHscale(e) {
+      this.setState({hscale: e.target.value});
+    }
+    handleChangeWscale(e) {
+      this.setState({wscale: e.target.value});
     }
   
     render() {
       const age = this.state.age;
       const gender = this.state.gender;
+      const height = this.state.height;
+      const weight = this.state.weight;
+      const waist = this.state.waist;
+      const neck = this.state.neck;
+      const hip = this.state.hip;
+      const hscale = this.state.hscale;
+      const wscale = this.state.wscale;
+      
       return (
         <fieldset>
           <h3>Enter your age and gender to get your daily recommendations</h3><br></br>
-          <h4 >Age<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Gender</h4>
+          <h4 >Age<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Gender <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Height <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Weight<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Hscale<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Neck<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Waist<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Hip<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Wscale</h4>
           
           
           
           <input
             value={age}
-            onChange={this.handleChange} />
+            onChange={this.handleChangeAge} />
           <input
             value={gender}
-            onChange={this.handleChangeTwo} />
+            onChange={this.handleChangeGender} />
+            <input
+            value={height}
+            onChange={this.handleChangeHeight} />
+          <input
+            value={weight}
+            onChange={this.handleChangeWeight} />
+            <input
+            value={hscale}
+            onChange={this.handleChangeHscale} />
+            <input  value={neck} 
+            onChange={this.handleChangeNeck}/>
+             <input  value={waist} 
+            onChange={this.handleChangeWaist}/>
+            <input  value={hip} 
+            onChange={this.handleChangeHip}/>
+            <input  value={wscale} 
+            onChange={this.handleChangeWscale}/>
+             
           
         
           <MineralsAndVitamins
             age={parseFloat(age)}
             gender={parseFloat(gender)}
             />
+          <Bmi weight={parseFloat(weight)}
+               height={parseFloat(height)} />
+          <Bfp waist={parseFloat(waist)}
+               neck={parseFloat(neck)}
+               height={parseFloat(height)}
+               hscale={parseFloat(hscale)}
+               gender={parseFloat(gender)}
+               hip={parseFloat(hip)} />   
+          <Ibw height={parseFloat(height)} 
+               hscale={parseFloat(hscale)}
+               wscale={parseFloat(wscale)} />   
+          <Bsa height={parseFloat(height)}
+               hscale={parseFloat(hscale)}
+               weight={parseFloat(weight)}
+               wscale={parseFloat(wscale)} />   
+          <Bmr height={parseFloat(height)}
+               hscale={parseFloat(hscale)}
+               weight={parseFloat(weight)}
+               wscale={parseFloat(wscale)}
+               age={parseFloat(age)} /> 
+          <WaistToHeight waist={parseFloat(waist)}
+          height={parseFloat(height)}
+          gender={parseFloat(gender)} />      
+          <WaistToHip waist={parseFloat(waist)}
+          hip={parseFloat(hip)}
+          gender={parseFloat(gender)} />
             
         </fieldset>
       );
