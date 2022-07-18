@@ -43,3 +43,52 @@ bmr = 66 + (6.3 * (weight / wScale)) + (12.9 * (height / hScale)) - (6.8 * age);
 bmr = 655 + (4.3 * (weight / wScale)) + (4.7 * (height / hScale)) - (4.7 * age);
 
 water = (weight * (0.5));
+
+//Body Mass Index, Male = Female
+bmiRead = "Based On Your BMI, You Are ";
+
+if (bmi < 15) bmiRead += "Very Severely Underweight.";
+if (bmi >= 15 && bmi < 16) bmiRead += "Severely Underweight.";
+if (bmi >= 16 && bmi < 18.5) bmiRead += "Underweight.";
+if (bmi >= 18.5 && bmi < 25) bmiRead += "Normal.";
+if (bmi > 25 && bmi < 30) bmiRead += "Overweight.";
+if (bmi >= 30 && bmi < 35) bmiRead += "Moderately Obese.";
+if (bmi >= 35 && bmi < 40) bmiRead += "Severely Obese.";
+if (bmi >= 40) bmiRead += "Very Severely Obese.";
+
+//Body Fat Percentage, Male = Female - 7
+bfRead = "Based On Your Body Fat Percentage, You "
+
+let mbf = 0;
+if(gender == "male") mbf = 7;
+
+if (bfp < (14-mbf)) bfRead += "Have Only Essential Fat.";
+if (bfp >= (14-mbf) && bfp < (21-mbf)) bfRead += "Are An Athlete.";
+if (bfp >= (21-mbf) && bfp < (25-mbf)) bfRead += "Are Fit";
+if (bfp >= (25-mbf) && bfp < (32-mbf)) bfRead += "Are Average";
+if (bfp >= (32-mbf)) bfRead += "Are Obese";
+
+//Waist to Height Ratio, Male = Female / 0.92
+wheRead = "Based On Your Waist To Height Ratio, You Are "
+
+let mwhe = 1; 
+if(gender == "male") mwhe = 0.92;
+
+if (whe >= (0.58/mwhe)) wheRead += "Highly Obese.";
+if (whe < (0.58/mwhe) && whe >= (0.54/mwhe)) wheRead += "Extremely Overweight.";
+if (whe < (0.54/mwhe) && whe >= (0.49/mwhe)) wheRead += "Overweight.";
+if (whe < (0.49/mwhe) && whe >= 0.46) wheRead += "Healthy.";
+if (whe < 0.46 && whe >= 0.42) wheRead += "Slender And Healthy.";
+if (whe < 0.42 && whe >= 0.35) wheRead += "Extremely Slim.";
+if (whe < 0.35) wheRead += "Abnormally Slim.";
+
+//Waist to Hip Ratio, Male = Female - 0.1
+whiRead = "Your Waist To Hip Ratio Is "
+
+let mwhi = 0
+if(gender == "male") mwhi = 0.1;
+
+if (whi < (0.85-mwhi)) whiRead += "Excellent.";
+if (whi >= (0.85-mwhi) && whi < (0.90-mwhi)) whiRead += "Good.";
+if (whi >= (0.90-mwhi) && whi < (0.95-mwhi)) whiRead += "Average.";
+if (whi >= (0.95-mwhi)) whiRead += "Bad.";
