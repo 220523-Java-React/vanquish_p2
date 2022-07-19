@@ -11,7 +11,7 @@ const UserInput = ({setResults}) => {
       <section>
         <p>Please fill in the following below to recieve your body information and health recommendations.</p>
         <h2>User Input</h2>
-        <form>
+        <form id="userinputs">
 
           <fieldset>
             Select a unit of measure:
