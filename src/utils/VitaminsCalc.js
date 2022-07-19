@@ -1,4 +1,4 @@
-export default function VataminsCalc (age){
+export default function VataminsCalc (age, gender){
 
 let vitarr = {},
 

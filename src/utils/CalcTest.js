@@ -127,7 +127,3 @@ export function MacroCalc(need){
 
     return carbs, proteins, fats;
 }
-
-export function vitaminsReader(age){
-    
-}
