@@ -25,9 +25,11 @@ export default function LoginForm(){
 
 
     return <>
+    <div id="loginbox">
     <input type="text" value={username} onChange={handleChangeUsername} placeholder="username"/><br/>
     <input type="password" value={password} onChange={handleChangePassword} placeholder="password"/><br/>
-    <button onClick={submit}>Login</button> 
-    <button onClick={signup}>Sign up</button>
+    <button class="button button1" onClick={submit}>Login</button> 
+    <button class="button button2" onClick={signup}>Sign up</button>
+    </div>
     </>
 }
