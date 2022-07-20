@@ -19,13 +19,13 @@ export default function Header() {
         <Box className={isHomePage ? 'header-container' : 'header-container-dark'}>
           <MaterialLink to='/' className='logo-container' underline='none' component={RouterLink}>
             <img src={logo} alt ='Logo' />
-            <Typography 
+            {/* <Typography 
               className={isHomePage ? 'header-text' : 'header-dark-text'}
               variant='h1' 
-              style={{fontFamily: 'Times New Roman, Times, serif', fontWeight: 'bold', fontSize: '50px', marginLeft: '20px'}}
+              style={{fontFamily: 'Poiret One, cursive', fontWeight: 'bold', fontSize: '50px', marginLeft: '20px'}}
             >
               Health Buddy
-            </Typography>
+            </Typography> */}
           </MaterialLink>
           
           <nav>
@@ -39,7 +39,7 @@ export default function Header() {
                   variant='body1'
                 >
                   <Typography
-                    style={{fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase'}}
+                    style={{fontFamily: 'Quicksand, sans-serif', fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase'}}
                     className={isHomePage ? 'header-text' : 'header-dark-text'}
                   >
                     Home
@@ -55,7 +55,7 @@ export default function Header() {
                   variant='body1'
                 >
                   <Typography
-                    style={{fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase'}}
+                    style={{fontFamily: 'Quicksand, sans-serif', fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase'}}
                     className={isHomePage ? 'header-text' : 'header-dark-text'}
                   >
                     Login
@@ -71,7 +71,7 @@ export default function Header() {
                   variant='body1'
                 >
                   <Typography
-                    style={{fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase'}}
+                    style={{fontFamily: 'Quicksand, sans-serif', fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase'}}
                     className={isHomePage ? 'header-text' : 'header-dark-text'}
                   >
                     Feedback

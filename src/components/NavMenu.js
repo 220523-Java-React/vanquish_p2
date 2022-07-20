@@ -7,7 +7,7 @@ import {
 
 const NavMenu = () => {
   return (
-    <Grid container style={{background: 'lightblue', padding: '20px'}} justifyContent='center'>
+    <Grid container style={{background: '#3fc1c9', padding: '20px'}} justifyContent='center'>
       <nav>
         <Grid container justifyContent='space-evenly' alignItems='center' spacing={10}>
           
