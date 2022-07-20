@@ -13,19 +13,30 @@ const Minerals = () => {
     <>
       <div style={{fontSize: '200px', marginTop: '100px'}}>Minerals</div>
       <NavMenu />
+      {/* <br></br>
       <br></br>
-      <br></br>
-      <Calculator />
+      <Calculator /> */}
         
        
-        <section>
-          {minerals.map((mineral, index) => (
-            <Box key={index}>
-              <Link href={mineral.url} target='_blank'>{mineral.name}</Link>
-              <Typography style={{marginBottom: '10px'}}>{mineral.description}</Typography>
-            </Box>
-          ))}
-        </section>       
+      <section>
+        {minerals.map((mineral, index) => (
+          <Box key={index}>
+            <Typography variant='h4'>
+                {mineral.name}
+            </Typography>
+            <Typography>
+                {mineral.description}
+            </Typography>
+            <Typography>
+                For more information click&nbsp;
+                <Link href={mineral.url}>
+                    here
+                </Link>
+                .
+            </Typography>
+          </Box>
+        ))} 
+      </section>       
 
        
       
