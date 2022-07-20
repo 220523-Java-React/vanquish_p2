@@ -6,21 +6,27 @@ export default function CalculatorTest(age, gender, height, weight, neck, waist,
     let hScale = 1; let wScale = 1; 
     let m = "kg"; let n = "cm";
 
-    if(measurement == "inlbs") {
+    if(measurement == "1") {
         hScale = 2.54;
         wScale = 2.54;
         m = "lbs"; 
         n = "in";
     }
 
+    let bsa, bmi, ibw, bfp, bmr, fm, lm, whe, whi, water = 0;
+
     //BSA - FOR BOTH MALE AND FEMALE
     bsa = Math.sqrt(((height * hScale) * (weight / wScale)) / 3600);
-    //BMI - FOR BOTH MALE AND FEMALE USING US SYSTEM
-    bmi = (703 * weight) / (height * height);
-    //BMI - FOR BOTH MALE AND FEMALE USING METRIC SYSTEM
-    bmi = (weight / (height * height)) * 10000;
+    
+    if(measurement == 1){
+        //BMI - FOR BOTH MALE AND FEMALE USING US SYSTEM
+        bmi = (703 * weight) / (height * height);
+    } else {
+        //BMI - FOR BOTH MALE AND FEMALE USING METRIC SYSTEM
+        bmi = (weight / (height * height)) * 10000;
+    }
 
-    if(gender == "male"){
+    if(gender == 1){
         //IBW - FOR MALE
         ibw = (50 + (0.91 * ((height * hScale) - 152.4))) * wScale;
         //BFP - FOR MALE
@@ -43,12 +49,20 @@ export default function CalculatorTest(age, gender, height, weight, neck, waist,
     water = (weight * (0.5));
 
     let userInputArray = {
-
+        ibw: ibw,
+        bfp: bfp,
+        bmr: bmr,
+        fm: fm,
+        lm: lm,
+        whe: whe,
+        whi: whi, 
+        water: water 
     }
+
     return userInputArray;
 }
 
-export function BmiReader(gender, bmi){
+export function BmiReader(bmi){
     //Body Mass Index, Male = Female
     bmiRead = "Based On Your BMI, You Are ";
 
@@ -76,6 +90,8 @@ export function BfCalc(gender, bfp){
     if (bfp >= (21-mbf) && bfp < (25-mbf)) bfRead += "Are Fit";
     if (bfp >= (25-mbf) && bfp < (32-mbf)) bfRead += "Are Average";
     if (bfp >= (32-mbf)) bfRead += "Are Obese";
+
+    return <p>bfRead</p>
 }
 
 export function WheReader(whe, gender){
