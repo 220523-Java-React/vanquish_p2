@@ -13,9 +13,9 @@ const Minerals = () => {
     <>
       <div style={{fontSize: '200px', marginTop: '100px'}}>Minerals</div>
       <NavMenu />
-      {/* <br></br>
       <br></br>
-      <Calculator /> */}
+      <br></br>
+      <Calculator />
         
        
       <section>
