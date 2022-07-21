@@ -43,27 +43,27 @@ const Home = () => {
 
           <p>Everyone is unique. Health Buddy can tailor to your health with recommended list of vitamins, minerals, macro nutrients and water.</p>
           <p>
-            <div class="img-con"><img src={vitimg} /><span class="centered">Vitamins</span></div>
-            <div class="img-con"><img src={minimg} /><span class="centered">Minerals</span></div>
-            <div class="img-con"><img src={macimg} /><span class="centered">Macro<br />Nutrients</span></div>
-            <div class="img-con"><img src={watimg} /><span class="centered">Water</span></div>
+            <div class="img-con"><img src={vitimg} alt="Vitamins" /><span class="centered">Vitamins</span></div>
+            <div class="img-con"><img src={minimg} alt="Minerals" /><span class="centered">Minerals</span></div>
+            <div class="img-con"><img src={macimg} alt="Macro Nutrients" /><span class="centered">Macro<br />Nutrients</span></div>
+            <div class="img-con"><img src={watimg} alt="Water" /><span class="centered">Water</span></div>
           </p>
 
 
           <p >Whether you're active or sitting at desk all day, Health Buddy can balance your dietary need. You set your goal and Health Buddy will push you to your best health.</p>
           <p>
-            <div class="img-con"><img src={sitimg} /><span class="centered">Active</span></div>
-            <div class="img-con"><img src={runimg} /><span class="centered">Goal</span></div>
-            <div class="img-con"><img src={wlkimg} /><span class="centered">Unique</span></div>
-            <div class="img-con"><img src={grdimg} /><span class="centered">Progress</span></div>
+            <div class="img-con"><img src={sitimg} alt="Active" /><span class="centered">Active</span></div>
+            <div class="img-con"><img src={runimg} alt="Goal" /><span class="centered">Goal</span></div>
+            <div class="img-con"><img src={wlkimg} alt="Unique" /><span class="centered">Unique</span></div>
+            <div class="img-con"><img src={grdimg} alt="Progress" /><span class="centered">Progress</span></div>
           </p>
 
           <p>Health Buddy works for all ages. Give it a try for your benefit. Take charge.</p>
           <p>
-            <div class="img-con"><img src={kidimg} /><span class="centered">Kids</span></div>
-            <div class="img-con"><img src={teeimg} /><span class="centered">Teens</span></div>
-            <div class="img-con"><img src={momimg} /><span class="centered">Adults</span></div>
-            <div class="img-con"><img src={eldimg} /><span class="centered">Elderly</span></div>
+            <div class="img-con"><img src={kidimg} alt="Kids" /><span class="centered">Kids</span></div>
+            <div class="img-con"><img src={teeimg} alt="Teens" /><span class="centered">Teens</span></div>
+            <div class="img-con"><img src={momimg} alt="Adults" /><span class="centered">Adults</span></div>
+            <div class="img-con"><img src={eldimg} alt="Elderly" /><span class="centered">Elderly</span></div>
           </p>
         </section>
         {/* <h3>
