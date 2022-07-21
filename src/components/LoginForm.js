@@ -127,7 +127,7 @@ export default function LoginForm({setName}){
                         <input type="text" value={username} onChange={handleChangeUsername} placeholder="username"/><br/>
                         <input type="password" value={password} onChange={handleChangePassword} placeholder="password"/><br/>
                         <button class="button button1" onClick={submit}>Login</button>
-                        <p>
+                        <p class="usermsg">
                             New User? Sign up&nbsp;
                             <span onClick={toggleRegister}>here</span>
                         </p> 
@@ -156,7 +156,7 @@ export default function LoginForm({setName}){
                     <input type="password" value={password} onChange={handleChangePassword} placeholder="password"/><br/>
                     
                     <button class="button button2" onClick={signup}>Sign up</button>
-                    <p>
+                    <p class="usermsg">
                         Already have an account? Login&nbsp;
                         <span onClick={toggleRegister}>here</span>
                     </p>
@@ -171,6 +171,5 @@ export default function LoginForm({setName}){
                 </form>
             </div>
         </>
-    );
-    
+    );   
 }

@@ -154,8 +154,13 @@ input[type=number] {
 
 font-family: 'Poiret One', cursive;
 font-family: 'Square Peg', cursive;
+font-family: 'Fredericka the Great', cursive;
 */
 
+.usermsg {
+    font-family: 'Poiret One', cursive;
+    font-size: 110%;
+}
 #userinputs  fieldset {
     background-color: #f5f5f5;
     margin: 10px;
@@ -184,7 +189,7 @@ font-family: 'Square Peg', cursive;
 }
 
 #loginbox {
-    padding: 100px 30px;
+    padding: 60px 30px;
     text-align: center;
     /* text-shadow: 2px 2px 5px black; */
     border:#000000;
@@ -192,12 +197,13 @@ font-family: 'Square Peg', cursive;
     width: 50%;
     height: 100%;
     background-color: rgba(245, 245, 245, 0.5);
+    overflow: hidden;
 }
 
 #loginbox input, button{
     font-family: 'Quicksand', sans-serif;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
     font-size: 110%;
 }
 
