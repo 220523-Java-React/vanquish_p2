@@ -478,7 +478,7 @@ function MineralsAndVitamins(props) {
     if (bmi >= 40) bmiread += "Very Severely Obese.";
   
   
-  return <p>bmi U.S: {bmi} %<br></br>
+  return <p>bmi: {bmi} %<br></br>
    
   {bmiread}</p>;
   
