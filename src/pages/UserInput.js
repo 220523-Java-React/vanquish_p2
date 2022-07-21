@@ -16,43 +16,60 @@ const UserInput = ({setResults}) => {
 
         <form id="userinputs" className="container">
         <p>Please fill in the following below to recieve your body information and health recommendations. </p>
-          <fieldset className="mySlides">
-            Select a unit of measure: <br />
-            <input type="radio" id="inlbs" name="unit" value="1" required />
-            <label for="inlbs">US (inches & lbs)</label>
-            <input type="radio" id="cmkg" name="unit" value="2" />
-            <label for="cmkg">Metric (cm & kg)</label>
-          </fieldset>
-          <fieldset className="mySlides">
-            Select your gender: <br />
+          <div className="mySlides">
+            <span class="left">Select a unit of measure:</span>
+              <span class="right">
+              <input type="radio" id="inlbs" name="unit" value="1" required />
+              <label for="inlbs">US (inches & lbs)</label><br />
+              <input type="radio" id="cmkg" name="unit" value="2" />
+              <label for="cmkg">Metric (cm & kg)</label>
+            </span>
+          </div>
+
+          <div className="mySlides">
+          <span class="left">Select your gender:</span>
+          <span class="right">
             <input type="radio" id="male" name="gender" value="1" required />
-            <label for="male">Male</label>
+            <label for="male">Male</label><br />
             <input type="radio" id="female" name="gender" value="2" />
             <label for="female">Female</label>
-          </fieldset>
-          <fieldset className="mySlides">
-            Enter your age: <br /><input type="number" id="age" name="age" placeholder="i.e.23" required />
-          </fieldset>
-          <fieldset className="mySlides">
-            <img class ="howtom" src={heightimg} /><br />
+          </span>
+          </div>
+
+          <div className="mySlides">
+          <span class="left">Enter your age: </span>
+          <span class="right">
+            <input type="number" id="age" name="age" placeholder="i.e.23" required />
+          </span>
+          </div>
+
+          <div className="mySlides">
+          <span class="left">Enter your weight:</span>
+          <input type="number" id="weight" name="weight" placeholder="i.e. 130" required />
+          </div>
+
+          <div className="mySlides">
+            <span class="left"><img class ="howtom" src={heightimg} /></span>
             Enter your height: <input type="number" id="height" name="height" placeholder="i.e. 66" required />
-          </fieldset>
-          <fieldset className="mySlides">
-            Enter your weight: <input type="number" id="weight" name="weight" placeholder="i.e. 130" required />
-          </fieldset>
-          <fieldset className="mySlides">
-          <img class ="howtom" src={waistimg} /><br />
-            Enter your waist circumference: <input type="number" id="waist" placeholder="i.e. 32" required />
-          </fieldset>
-          <fieldset className="mySlides">
-          <img class ="howtom" src={neckimg} /><br />
-            Enter your neck circumference: <input type="number" id="neck" placeholder="i.e. 18" name="neck" required />
-          </fieldset>
-          <fieldset className="mySlides">
-          <img class ="howtom" src={hipimg} /><br />
-            Enter your hip circumference: <input type="number" id="hip" placeholder="i.e. 34" name="hip" required />
-          </fieldset>
-          <fieldset className="mySlides">
+          </div>
+
+          <div className="mySlides">
+          <span class="left"><img class ="howtom" src={neckimg} /></span>
+          <span class="left">Enter your neck circumference: </span><input type="number" id="neck" placeholder="i.e. 18" name="neck" required />
+          </div>
+
+          <div className="mySlides">
+          <span class="left"><img class ="howtom" src={waistimg} /></span>
+          <span class="right">Enter your waist circumference: 
+          <input type="number" id="waist" placeholder="i.e. 32" required /></span>
+          </div>
+
+          <div className="mySlides">
+          <span class="left"><img class ="howtom" src={hipimg} /></span>
+          <span class="right">Enter your hip circumference: <input type="number" id="hip" placeholder="i.e. 34" name="hip" required /></span>
+          </div>
+
+          <div className="mySlides">
             Enter activity level: <br />
             <input type="radio" id="sed" name="activity" value="1" required />
             <label for="sed">Sedentary</label>
@@ -64,8 +81,9 @@ const UserInput = ({setResults}) => {
             <label for="veryact">Very Active</label>
             <input type="radio" id="extact" name="activity" value="5" />
             <label for="extact">Extremely Active</label>
-          </fieldset>
-          <fieldset className="mySlides">
+          </div>
+
+          <div className="mySlides">
             Enter your weight goal: <br />
             <input type="radio" id="losefast" name="goal" value="1" required />
             <label for="losefast">Lose Fast</label>
@@ -77,7 +95,8 @@ const UserInput = ({setResults}) => {
             <label for="gainnorm">Gain Noraml</label>
             <input type="radio" id="gainfast" name="goal" value="5" />
             <label for="gainfast">Gain Fast</label>
-          </fieldset>
+          </div>
+
           <button class="button button1">Enter</button> 
         </form>
     </>
