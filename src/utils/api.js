@@ -21,7 +21,7 @@ export const APIGet = endpoint => axios.get(endpoint, {
 });
 
 export const APIPost = (endpoint, body) => {
-    axios.post(endpoint, body);
+   axios.post(endpoint, body);
 }
     
 

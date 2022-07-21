@@ -1,49 +1,62 @@
-import {useState} from "react";
+import { useState, useEffect } from "react";
+
 import { APIPost } from "../utils/api";
 
-export default function LoginForm(){
-    
-    const [register, setRegister] = useState(false); 
-    const [firstName, updateFirst] = useState("");
-    const [lastName, updateLast] = useState("");
-    const [username, updateUsername] = useState("");
-    const [email, updateEmail] = useState("");
-    const [password, updatePassword] = useState("");
+export default function LoginForm({setName}){
+
+    const [ register, setRegister ] = useState(false); 
+    const [ firstName, setFirst ] = useState("");
+    const [ lastName, setLast ] = useState("");
+    const [ username, setUsername ] = useState("");
+    const [ email, setEmail ] = useState("");
+    const [ password, setPassword ] = useState("");
+    const [ error, setError ] = useState("");
+
+    useEffect(() => {
+        setTimeout(() => {
+            setError("");
+        }, 3000);
+    }, [error]);
 
     const handleChangeFirst = event => {
-        updateFirst(event.target.value)
+        setFirst(event.target.value)
     };
 
     const handleChangeLast = event => {
-        updateLast(event.target.value);
+        setLast(event.target.value);
     };
 
     const handleChangeUsername = event => {
-        updateUsername(event.target.value);
+        setUsername(event.target.value);
     };
 
     const handleChangeEmail = event => {
-        updateEmail(event.target.value);
+        setEmail(event.target.value);
     };
 
     const handleChangePassword = event => {
-        updatePassword(event.target.value);
+        setPassword(event.target.value);
     };
 
     const submit = () => {
         // TODO: replace me with an authentication call to the backend
         console.log(username, password);
+        setName(username);
     };
 
     const signup = () => {
+          
         let body = {
             username: username,
             firstName: firstName,
             lastName: lastName,
             email: email,
             password: password
-        }
+        };
+ 
         APIPost("userinfo", body);
+ 
+        setName(username);
     };
 
     const toggleRegister = () => {
@@ -79,7 +92,16 @@ export default function LoginForm(){
                 <p>
                     Already have an account? Login&nbsp;
                     <span onClick={toggleRegister}>here</span>
-                </p> 
+                </p>
+
+                {(error !== "") &&
+                    <div>
+                        <p className='signupError'>
+                            {error}
+                        </p>
+                    </div>
+                }
+
             </div>
         </>
     );

@@ -244,6 +244,13 @@ font-family: 'Square Peg', cursive;
     
   }
 
+  .signupError {
+    color: red;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #000000;
+  }
+
 footer {
     font-family: 'Quicksand', sans-serif;
     height: 50px;

@@ -25,15 +25,15 @@ function App() {
 
   API();
   const [ results, setResults ] = useState([]);
-
+  const [ name, setName ] = useState("");
   return (
     <>
       <Router>
         <Header  />
 
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/' element={<Home name={name} />} />
+          <Route path='/login' element={<Login setName={setName}/>} />
           <Route path='/register' element={<Register />} />
           <Route path='/body-feedback' element={<BodyFeedback results={results}/>} />
           <Route path='/body-info' element={<BodyInfo />} />
