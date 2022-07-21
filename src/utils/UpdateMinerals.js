@@ -1601,7 +1601,7 @@ if(this.state.gender == 2){
              </label> <br></br><br></br>
              
              
-             <label> hscale (input 2.5 U.S/ 1 Metric) 
+             <label> hscale (input 2.54 U.S/ 1 Metric) 
             <input
             value={hscale}
             onChange={this.handleChangeHscale} />
@@ -1622,7 +1622,7 @@ if(this.state.gender == 2){
             onChange={this.handleChangeHip}/>
             </label><br></br><br></br>
 
-             <label> wscale (input 2.54 U.S/ 1 Metric)  
+             <label> wscale (input 2.205 U.S/ 1 Metric)  
             <input  value={wscale} 
             onChange={this.handleChangeWscale}/>
             </label><br></br><br></br>
