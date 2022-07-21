@@ -63,7 +63,7 @@ export default function LoginForm({setName}){
         setRegister(!register);
     }
 
-    if (register) {
+    if (!register) {
         return (
             <>
                 <div id="loginbox">
