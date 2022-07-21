@@ -7,7 +7,6 @@ import {
 } from '@mui/material';
 
 import NavMenu from '../components/NavMenu';
-import { textAlign } from '@mui/system';
 
 const BodyFeedback = ({results, name}) => {
 
@@ -229,18 +228,18 @@ const BodyFeedback = ({results, name}) => {
         </h2>
         <p>Here's your feedback based on the results you've recieved on the body info page.</p>
         
-        <Box style={{display: 'flex', justifyContent: 'center', margin: '40px 0'}}>
-          <Grid container justifyContent='center' style={{border: '2px solid black', width: '50%'}}>
-            <Grid item xs={12} style={{background: 'orange', border: '2px solid black', textAlign: 'center'}}>
+        <Box className='feedback_featured_container'>
+          <Grid container className='table_featured' justifyContent='center'>
+            <Grid item xs={12} className='table_header'>
               General Recommendations
             </Grid>
 
             {tempResults[0].map((item, index) => (
                 <Grid container key={index}>
-                  <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
+                  <Grid item className='table_field' xs={6}>
                     {item.title}
                   </Grid>
-                  <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
+                  <Grid item className='table_field' xs={6}>
                     {item.reading}
                   </Grid>
                 </Grid>
@@ -251,36 +250,36 @@ const BodyFeedback = ({results, name}) => {
 
         <Grid container justifyContent='space-between' spacing={5}>
           <Grid item xs={12} lg={4}>
-            <Grid container justifyContent='center' style={{border: '2px solid black'}}>
-              <Grid item xs={12} style={{background: 'orange', border: '2px solid black', textAlign: 'center'}}>
+            <Grid container className='table_container' justifyContent='center'>
+              <Grid item xs={12} className='table_header'>
                 Vitamin Recommendations
               </Grid>
               
-            {tempResults[1].map((item, index) => (
-              <Grid container key={index}>
-                <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-                  {item.vitamin}
+              {tempResults[1].map((item, index) => (
+                <Grid container key={index}>
+                  <Grid item className='table_field' xs={6}>
+                    {item.vitamin}
+                  </Grid>
+                  <Grid item className='table_field' xs={6}>
+                    {item.recommendation}
+                  </Grid>
                 </Grid>
-                <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-                  {item.recommendation}
-                </Grid>
-              </Grid>
-            ))} 
+              ))} 
 
             </Grid>
           </Grid>
           <Grid item xs={12} lg={4}>
-            <Grid container justifyContent='center' style={{border: '2px solid black'}}>
-            <Grid item xs={12} style={{background: 'orange', border: '2px solid black', textAlign: 'center'}}>
+            <Grid container className='table_container' justifyContent='center'>
+              <Grid item xs={12} className='table_header'>
                 Macronutrient Recommendations
               </Grid>
               
               {tempResults[2].map((item, index) => (
                 <Grid container key={index}>
-                  <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
+                  <Grid item className='table_field' xs={6}>
                     {item.nutrient}
                   </Grid>
-                  <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
+                  <Grid item className='table_field' xs={6}>
                     {item.recommendation}
                   </Grid>
                 </Grid>
@@ -289,24 +288,23 @@ const BodyFeedback = ({results, name}) => {
             </Grid>
           </Grid>
           <Grid item xs={12} lg={4}>
-            <Grid container justifyContent='center' style={{border: '2px solid black'}}>
-              <Grid item xs={12} style={{background: 'orange', border: '2px solid black', textAlign: 'center'}}>
+            <Grid container className='table_container' justifyContent='center'>
+              <Grid item xs={12} className='table_header'>
                 Mineral Recommendations
               </Grid>
               
               {tempResults[3].map((item, index) => (
                 <Grid container key={index}>
-                  <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
+                  <Grid item className='table_field' xs={6}>
                     {item.mineral}
                   </Grid>
-                  <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
+                  <Grid item className='table_field' xs={6}>
                     {item.recommendation}
                   </Grid>
                 </Grid>
               ))} 
             </Grid>
           </Grid>
-          
           
         </Grid>
       </section>
