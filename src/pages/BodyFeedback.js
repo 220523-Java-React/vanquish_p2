@@ -11,6 +11,172 @@ import { textAlign } from '@mui/system';
 
 const BodyFeedback = ({results, name}) => {
 
+  let general = [
+    {
+      title: 'bmi',
+      reading: 'BMI reading here'
+    },
+    {
+      title: 'bf',
+      reading: 'BF reading here'
+    },
+    {
+      title: 'whe',
+      reading: 'WHE reading here'
+    },
+    {
+      title: 'whe',
+      reading: 'WHI reading here'
+    }
+  ];
+
+  let vitamins = [
+    {
+      vitamin: 'Vitamin A',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin C',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin D',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin E',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin K',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin B1',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin B2',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin B3',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin B5',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin B7',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin B6',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin B12',
+      recommendation: 'recommendation'
+    },
+    {
+      vitamin: 'Vitamin B9',
+      recommendation: 'recommendation'
+    }
+  ];
+
+  let nutrients = [
+    {
+      nutrient: 'Calories',
+      recommendation: 'recommendation'
+    },
+    {
+      nutrient: 'Carbs',
+      recommendation: 'recommendation'
+    },
+    {
+      nutrient: 'Protein',
+      recommendation: 'recommendation'
+    },
+    {
+      nutrient: 'Fat',
+      recommendation: 'recommendation'
+    },
+    {
+      nutrient: 'Water',
+      recommendation: 'recommendation'
+    }
+  ]
+
+  let minerals = [
+    {
+      mineral: 'Choline',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Magnesium',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Calcium',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Zinc',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Copper',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Selenium',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Manganese',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Phosphorus',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Potassium',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Iodine',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Chromium',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Molhybdenum',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Fluoride',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Sodium',
+      recommendation: 'recommendation'
+    },
+    {
+      mineral: 'Chloride',
+      recommendation: 'recommendation'
+    }
+  ];
+
+  let tempResults = [];
+  tempResults[0] = general;
+  tempResults[1] = vitamins;
+  tempResults[2] = nutrients;
+  tempResults[3] = minerals;
+
   if (results.length === 0) {
     return (
       <>
@@ -68,32 +234,19 @@ const BodyFeedback = ({results, name}) => {
             <Grid item xs={12} style={{background: 'orange', border: '2px solid black', textAlign: 'center'}}>
               General Recommendations
             </Grid>
-            <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-              BMI
-            </Grid>
-            <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-              BMI Read goes here
-            </Grid>
-            <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-              BF
-            </Grid>
-            <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-              BF Read goes here
-            </Grid>
-            <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-              WHE
-            </Grid>
-            <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-              WHE Read goes here
-            </Grid>
-            <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-              WHI
-            </Grid>
-            <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-              WHI Read goes here
-            </Grid>
-          </Grid>
 
+            {tempResults[0].map((item, index) => (
+                <Grid container key={index}>
+                  <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
+                    {item.title}
+                  </Grid>
+                  <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
+                    {item.reading}
+                  </Grid>
+                </Grid>
+            ))} 
+
+          </Grid>
         </Box>
 
         <Grid container justifyContent='space-between' spacing={5}>
@@ -102,24 +255,18 @@ const BodyFeedback = ({results, name}) => {
               <Grid item xs={12} style={{background: 'orange', border: '2px solid black', textAlign: 'center'}}>
                 Vitamin Recommendations
               </Grid>
-              <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-                VITAMIN A
+              
+            {tempResults[1].map((item, index) => (
+              <Grid container key={index}>
+                <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
+                  {item.vitamin}
+                </Grid>
+                <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
+                  {item.recommendation}
+                </Grid>
               </Grid>
-              <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-                500mg
-              </Grid>
-              <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-                VITAMIN B
-              </Grid>
-              <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-                1500mg
-              </Grid>
-              <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-                VITAMIN C
-              </Grid>
-              <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-                2500mg
-              </Grid>
+            ))} 
+
             </Grid>
           </Grid>
           <Grid item xs={12} lg={4}>
@@ -127,24 +274,18 @@ const BodyFeedback = ({results, name}) => {
             <Grid item xs={12} style={{background: 'orange', border: '2px solid black', textAlign: 'center'}}>
                 Macronutrient Recommendations
               </Grid>
-              <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-                Calories
-              </Grid>
-              <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-                2000
-              </Grid>
-              <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-                Water
-              </Grid>
-              <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-                100 oz
-              </Grid>
-              <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-                Fat
-              </Grid>
-              <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-                500g
-              </Grid>
+              
+              {tempResults[2].map((item, index) => (
+                <Grid container key={index}>
+                  <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
+                    {item.nutrient}
+                  </Grid>
+                  <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
+                    {item.recommendation}
+                  </Grid>
+                </Grid>
+              ))} 
+
             </Grid>
           </Grid>
           <Grid item xs={12} lg={4}>
@@ -152,24 +293,17 @@ const BodyFeedback = ({results, name}) => {
               <Grid item xs={12} style={{background: 'orange', border: '2px solid black', textAlign: 'center'}}>
                 Mineral Recommendations
               </Grid>
-              <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-                Choline
-              </Grid>
-              <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-                2000
-              </Grid>
-              <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-                Mineral 2
-              </Grid>
-              <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-                100 
-              </Grid>
-              <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
-                Mineral 3
-              </Grid>
-              <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
-                500
-              </Grid>
+              
+              {tempResults[3].map((item, index) => (
+                <Grid container key={index}>
+                  <Grid item xs={6} style={{background: 'lightblue', border: '2px solid black'}}>
+                    {item.mineral}
+                  </Grid>
+                  <Grid item xs={6} style={{background: 'pink', border: '2px solid black'}}>
+                    {item.recommendation}
+                  </Grid>
+                </Grid>
+              ))} 
             </Grid>
           </Grid>
           
