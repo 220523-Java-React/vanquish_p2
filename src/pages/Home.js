@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+import { APIGet, API } from '../utils/api';
+
 import NavMenu from '../components/NavMenu';
 import vitimg from '../assets/images/vitamins.png';
 import minimg from '../assets/images/minerals.png';
@@ -14,12 +17,20 @@ import wlkimg from '../assets/images/walking.png';
 
 
 const Home = () => {
+  
+  const [user, setUser] = useState({});
+  API();
+  useEffect(() => {
+    APIGet("userinfo").then(response => {
+      setUser(response.data[0]);
+    })}, []);
+  
   return (
     <>
       <section>
         <div class="hero">
           <div class="content">
-            <h1>Welcome.</h1>
+            <h1>Welcome {user.username}</h1>
             <h2>Get Health Buddy to help you take charge of your health.</h2>
           </div>
         </div>
