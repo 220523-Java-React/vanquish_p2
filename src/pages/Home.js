@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { APIGet, API } from '../utils/api';
+import { APIGet } from '../utils/api';
 
 import NavMenu from '../components/NavMenu';
 import vitimg from '../assets/images/vitamins.png';
@@ -19,11 +19,12 @@ import wlkimg from '../assets/images/walking.png';
 const Home = () => {
   
   const [user, setUser] = useState({});
-  API();
+  
   useEffect(() => {
-    APIGet("userinfo").then(response => {
-      setUser(response.data[0]);
-    })}, []);
+    APIGet("userinfo/username/Sandyluvstx").then(response => {
+      setUser(response.data);
+    })
+  }, []);
   
   return (
     <>

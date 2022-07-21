@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { APIPost } from "../utils/api";
 
 export default function LoginForm(){
     
@@ -20,7 +21,14 @@ export default function LoginForm(){
     }
 
     function signup(){
-
+        let body = {
+            username: username,
+            firstName: 'Test',
+            lastName: 'User',
+            email: 'Test@User.com',
+            password: 'pass1234'
+        }
+        APIPost("userinfo", body);
     }
 
 
