@@ -270,6 +270,32 @@ font-family: 'Fredericka the Great', cursive;
     width: 500px;
 }
 
+/* Feedback styles */
+.feedback_featured_container {
+    display: flex; 
+    justify-content: center; 
+    margin: 40px 0;
+}
+
+.table_featured {
+    border: 2px solid black;
+    width: 50% !important;
+}
+
+.table_container {
+    border: 2px solid black;
+}
+
+.table_header {
+    background: orange; 
+    border: 2px solid black; 
+    text-align: center
+}
+
+.table_field {
+    border: 2px solid black !important;
+}
+
 footer {
     font-family: 'Quicksand', sans-serif;
     height: 50px;
