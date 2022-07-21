@@ -3,13 +3,12 @@ import {
   Box,
   Grid,
   Typography,
-  Button,
   Link as MateriaLink
 } from '@mui/material';
 
 import NavMenu from '../components/NavMenu';
 
-const BodyFeedback = ({results}) => {
+const BodyFeedback = ({results, name}) => {
 
   if (results.length === 0) {
     return (
@@ -55,11 +54,35 @@ const BodyFeedback = ({results}) => {
 
   return (
     <>
-      <div style={{fontSize: '200px', marginTop: '100px'}}>BodyFeedback</div>
+      {/* <div style={{fontSize: '200px', marginTop: '100px'}}>BodyFeedback</div> */}
 
-      <section>
+      <section style={{marginTop: '100px', padding: '50px'}}>
+        <h2>
+          Body Feedback for {name}
+        </h2>
         <p>Here's your feedback based on the results you've recieved on the body info page.</p>
-        <h2>Body Feedback</h2>
+        
+        <Box>
+            GENERAL Recommendations  
+        </Box>
+
+        <Grid container justifyContent='space-between'>
+          <Grid item xs={12} lg={4}>
+            <Grid container justifyContent='center'>
+              Vitamin Recommendations
+            </Grid>
+          </Grid>
+          <Grid item xs={12} lg={4}>
+            <Grid container justifyContent='center'>
+              Nutrient Recommendations
+            </Grid>
+          </Grid>
+          <Grid item xs={12} lg={4}>
+            <Grid container justifyContent='center'>
+              Mineral Recommendations
+            </Grid>
+          </Grid>
+        </Grid>
       </section>
 
       <NavMenu />

@@ -24,7 +24,7 @@ import {API} from './utils/api';
 function App() {
 
   API();
-  const [ results, setResults ] = useState([]);
+  const [ results, setResults ] = useState([{REMOVE: "REMOVE THIS. FOR TEST PURPOSES ONLY"}]);
   const [ name, setName ] = useState("");
   return (
     <>
@@ -35,7 +35,7 @@ function App() {
           <Route path='/' element={<Home name={name} />} />
           <Route path='/login' element={<Login setName={setName}/>} />
           <Route path='/register' element={<Register />} />
-          <Route path='/body-feedback' element={<BodyFeedback results={results}/>} />
+          <Route path='/body-feedback' element={<BodyFeedback results={results} name={name} />} />
           <Route path='/body-info' element={<BodyInfo />} />
           <Route path='/minerals' element={<Minerals />} />
           <Route path='/nutrients' element={<Nutrients />} />
