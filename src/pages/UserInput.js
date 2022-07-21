@@ -4,6 +4,8 @@ import waistimg from '../assets/images/waist.png';
 import hipimg from '../assets/images/hip.png';
 import heightimg from '../assets/images/height.png';
 import neckimg from '../assets/images/neck.png';
+import { Calculate } from "@mui/icons-material";
+import Calculator from "../utils/UpdateMinerals";
 
 const UserInput = ({setResults}) => {
 
@@ -12,6 +14,7 @@ const UserInput = ({setResults}) => {
       <div style={{fontSize: '100px', marginTop: '100px'}}>User Input</div>
 
       <NavMenu />
+      <Calculator />
       
 
         <form id="userinputs" className="container">

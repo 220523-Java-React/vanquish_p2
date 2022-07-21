@@ -478,17 +478,22 @@ function MineralsAndVitamins(props) {
     if (bmi >= 40) bmiread += "Very Severely Obese.";
   
   
-  return <p>bmi U.S: {bmi}<br></br>
-  bmi Metric: {bmimetric}<br></br>
+  return <p>bmi U.S: {bmi} %<br></br>
+   
   {bmiread}</p>;
   
    
  }
 
  function Bfp(props){
-  let bfp = (495 / (1.0324 - 0.19077 * Math.log10((props.waist - props.neck)* props.hscale) + 0.15456 * Math.log10(props.height))) - 450;
+  if(props.gender == 1){
+  var bfp = (495 / (1.0324 - 0.19077 * Math.log10((props.waist - props.neck)* props.hscale) + 0.15456 * Math.log10(props.height))) - 450;
+  }
+
   
-  let bfpfemale = (495 / (1.29579 - 0.35004 * Math.log10((props.waist + props.hip - props.neck)*props.hscale) + 0.22100 * Math.log10(props.height))) - 450;
+  if(props.gender == 2){ 
+  var bfp = (495 / (1.29579 - 0.35004 * Math.log10((props.waist + props.hip - props.neck)*props.hscale) + 0.22100 * Math.log10(props.height))) - 450;
+    }
  
   var bfread = "Based On Your Body Fat Percentage, You ";
   let mbf = 0;
@@ -502,9 +507,8 @@ if (bfp >= (25-mbf) && bfp < (32-mbf)) bfread += "Are Average";
 if (bfp >= (32-mbf)) bfread += "Are Obese";
 
 
-  return <p>Male BodyFatPercentage: {bfp}<br></br>
-  Female BodyFatPercentage: {bfpfemale}<br></br>
-  {bfread}</p>;
+  return <p>BodyFatPercentage: {Math.round(bfp*100)/100} %<br></br>
+   </p>;
 
  
  }
@@ -514,15 +518,15 @@ if (bfp >= (32-mbf)) bfread += "Are Obese";
   let ibwmale = (50 + (0.91 * ((props.height * props.hscale) - 152.4))) * props.wscale;
   let ibwfemale = (45.5 + (0.91 * ((props.height * props.hscale) - 152.4))) * props.wscale;
 
-  return <p>Male ibw: {ibwmale}<br></br>
-  Female ibw: {ibwfemale}</p>;
+  return <p>Male ibw: {Math.round(ibwmale *100)/100 } %<br></br>
+  Female ibw: {Math.round(ibwfemale *100)/100} %</p>;
 
  }
 
  function Bsa(props){
   let bsa = Math.sqrt(((props.height * props.hscale) * (props.weight / props.wscale)) / 3600);
 
-  return <p>BSA : {bsa}</p>;
+  return <p>BSA : {Math.round(bsa*100)/100 } %</p>;
 
  }
 
@@ -531,8 +535,8 @@ if (bfp >= (32-mbf)) bfread += "Are Obese";
 
      let bmrfemale = 655 + (4.3 * (props.weight / props.wscale)) + (4.7 * (props.height / props.hscale)) - (4.7 * props.age);
 
-     return <p>BMR male: {bmrmale}<br></br>
-     BMR female: {bmrfemale}</p>;
+     return <p>BMR male: {Math.round(bmrmale*100)/100} %<br></br>
+     BMR female: {Math.round(bmrfemale*100)/100} % </p>;
  }
 
  function WaistToHeight(props){
@@ -1486,36 +1490,6 @@ if(this.state.gender == 2){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
      
        
 
@@ -1580,8 +1554,7 @@ if(this.state.gender == 2){
       
       return (
         <fieldset>
-          <h3>Enter your age and gender to get your daily recommendations</h3><br></br>
-          <h4 >Age<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> Gender(1male/2female) <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   </span>Height <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Weight<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Hscale(1 for U.S/ 2.54 for Metric)<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Neck<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Waist<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Hip<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Wscale(1 for U.S/ 2.54 for Metric)</h4>
+          
           
            
           
@@ -1589,7 +1562,73 @@ if(this.state.gender == 2){
              
           
         
-          <MineralsAndVitamins
+          
+           <form onSubmit={this.handleSubmit}>
+         
+        <label>
+          Plan (input 1 to 5 from lose fast to gain fast ) 
+          <input type="text" value={plan} onChange={this.handleChangePlan} />
+        </label><br></br><br></br>
+
+        <label>
+          Active (input 1 - 5 least active - most active) 
+          <input type="text" value={active} onChange={this.handleChangeActive} />
+        </label><br></br><br></br> 
+       
+       
+        <label>age 
+        <input
+            value={age}
+            onChange={this.handleChangeAge} />
+            </label><br></br><br></br>
+          
+            <label>gender (input 1 for male 2 for female) 
+          <input
+            value={gender}
+            onChange={this.handleChangeGender} />
+           </label><br></br><br></br>
+           
+            <label> height 
+            <input
+            value={height}
+            onChange={this.handleChangeHeight} />
+           </label><br></br><br></br>
+           
+            <label> weight 
+          <input
+            value={weight}
+            onChange={this.handleChangeWeight} />
+             </label> <br></br><br></br>
+             
+             
+             <label> hscale (input 2.5 U.S/ 1 Metric) 
+            <input
+            value={hscale}
+            onChange={this.handleChangeHscale} />
+             </label><br></br><br></br>
+             
+             <label> neck 
+            <input  value={neck} 
+            onChange={this.handleChangeNeck}/>
+             </label><br></br><br></br>
+            
+            <label> waist 
+             <input  value={waist} 
+            onChange={this.handleChangeWaist}/>
+            </label><br></br><br></br>
+
+            <label> hip 
+            <input  value={hip} 
+            onChange={this.handleChangeHip}/>
+            </label><br></br><br></br>
+
+             <label> wscale (input 2.54 U.S/ 1 Metric)  
+            <input  value={wscale} 
+            onChange={this.handleChangeWscale}/>
+            </label><br></br><br></br>
+        <input type="submit" value="Submit to save your recommendations" />
+         </form><br></br>
+      <MineralsAndVitamins
             age={parseFloat(age)}
             gender={parseFloat(gender)}
             />
@@ -1619,76 +1658,6 @@ if(this.state.gender == 2){
           <WaistToHip waist={parseFloat(waist)}
           hip={parseFloat(hip)}
           gender={parseFloat(gender)} />
-           <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChangeSubmit} />
-        </label>
-
-        <label>
-          Plan
-          <input type="text" value={plan} onChange={this.handleChangePlan} />
-        </label>
-
-        <label>
-          Active
-          <input type="text" value={active} onChange={this.handleChangeActive} />
-        </label>
-       
-       
-        <label>age 
-        <input
-            value={age}
-            onChange={this.handleChangeAge} />
-            </label>
-          
-            <label>gender 
-          <input
-            value={gender}
-            onChange={this.handleChangeGender} />
-           </label>
-           
-            <label> height
-            <input
-            value={height}
-            onChange={this.handleChangeHeight} />
-           </label>
-           
-            <label> weight
-          <input
-            value={weight}
-            onChange={this.handleChangeWeight} />
-             </label>
-             
-             
-             <label> hscale
-            <input
-            value={hscale}
-            onChange={this.handleChangeHscale} />
-             </label>
-             
-             <label> neck
-            <input  value={neck} 
-            onChange={this.handleChangeNeck}/>
-             </label>
-            
-            <label> waist
-             <input  value={waist} 
-            onChange={this.handleChangeWaist}/>
-            </label>
-
-            <label> hip
-            <input  value={hip} 
-            onChange={this.handleChangeHip}/>
-            </label>
-
-             <label> wscale
-            <input  value={wscale} 
-            onChange={this.handleChangeWscale}/>
-            </label>
-        <input type="submit" value="Submit" />
-      </form>
-          
            
            
             

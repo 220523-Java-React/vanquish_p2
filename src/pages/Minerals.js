@@ -15,7 +15,7 @@ const Minerals = () => {
       <NavMenu />
       <br></br>
       <br></br>
-      <Calculator />
+       
         
        
       <section>
