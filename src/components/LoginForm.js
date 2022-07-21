@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // import { APIPost } from "../utils/api";
 
 export default function LoginForm({setName}){
+    let navigate = useNavigate();
 
     const [ register, setRegister ] = useState(false); 
     const [ firstName, setFirst ] = useState("");
@@ -58,8 +60,8 @@ export default function LoginForm({setName}){
         axios.post('userinfo', body)
             .then(response => {
                 if(response.status === 200) {
-                    window.location.replace('/');
                     setName(username);
+                    navigate("/", { replace: true });
                 }
                 else {
                     setError("Error: Account not created!");  
@@ -94,6 +96,12 @@ export default function LoginForm({setName}){
 
     const toggleRegister = () => {
         setRegister(!register);
+    };
+
+    const processing = () => {
+        setTimeout(() => {
+            window.location.replace('/');
+        }, 1000);
     }
 
     if (!register) {
