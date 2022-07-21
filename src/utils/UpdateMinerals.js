@@ -586,7 +586,7 @@ return <p>{whiread}</p>
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChangeSubmit = this.handleChangeSubmit.bind(this);
       this.handleChangePlan = this.handleChangePlan.bind(this);
-      this.handleChangeActive = this.handleChangePlan.bind(this);
+      this.handleChangeActive = this.handleChangeActive.bind(this);
       this.state = {value: ''};
       this.state = {age: ''};
       this.state ={gender: ''};
@@ -649,6 +649,7 @@ return <p>{whiread}</p>
       if (this.state.age >= 71 && this.state.gender == 2) {
           
              let body = {
+            
           mineralslId: 3,
           userId : 3,
           choline: 425,
@@ -691,6 +692,7 @@ return <p>{whiread}</p>
       if (this.state.age >= 71 && this.state.gender == 1) {
           
         let body = {
+          
      mineralslId: 3,
      userId : 3,
      choline: 425,
@@ -710,6 +712,7 @@ return <p>{whiread}</p>
      chloride: 1.8
       }
       let bodyVitamin = {
+        
         userId: 2,
         vitaminA: 700,
         vitaminC: 75,
@@ -734,6 +737,7 @@ return <p>{whiread}</p>
      if (this.state.age >= 51 && this.state.age < 71 && this.state.gender == 2) {
           
         let body = {
+        
      mineralslId: 3,
      userId : 3,
      choline: 425,
@@ -777,6 +781,7 @@ return <p>{whiread}</p>
      if (this.state.age >= 51 && this.state.age < 71 && this.state.gender == 1) {
           
       let body = {
+        
    mineralslId: 3,
    userId : 3,
    choline: 500,
@@ -819,6 +824,7 @@ return <p>{whiread}</p>
    if (this.state.age >= 19 && this.state.age < 51 && this.state.gender == 2) {
           
     let body = {
+     
  mineralslId: 3,
  userId : 3,
  choline: 425,
@@ -861,6 +867,7 @@ return <p>{whiread}</p>
   if (this.state.age >= 19 && this.state.age < 51 && this.state.gender == 1) {
           
     let body = {
+      
  mineralslId: 3,
  userId : 3,
  choline: 500,
@@ -903,6 +910,7 @@ return <p>{whiread}</p>
  if (this.state.age >= 14 && this.state.age < 19 && this.state.gender == 2) {
           
   let body = {
+   
 mineralslId: 3,
 userId : 3,
 choline: 400,
@@ -945,6 +953,7 @@ APIPost("minerals", body)
 if (this.state.age >= 14 && this.state.age < 19 && this.state.gender == 1) {
           
   let body = {
+   
 mineralslId: 3,
 userId : 3,
 choline: 550,
@@ -987,6 +996,7 @@ APIPost("minerals", body)
 if (this.state.age >= 9 && this.state.age < 14 && this.state.gender == 2) {
           
   let body = {
+   
 mineralslId: 3,
 userId : 3,
 choline: 375,
@@ -1029,6 +1039,7 @@ APIPost("minerals", body)
 if (this.state.age >= 9 && this.state.age < 14 && this.state.gender == 1) {
           
   let body = {
+    
 mineralslId: 3,
 userId : 3,
 choline: 375,
@@ -1071,6 +1082,7 @@ APIPost("minerals", body)
 if (this.state.age >= 4 && this.state.age < 9 ) {
           
   let body = {
+    
 mineralslId: 3,
 userId : 3,
 choline: 250,
@@ -1113,6 +1125,7 @@ APIPost("minerals", body)
 if (this.state.age >= 1 && this.state.age < 4 ) {
           
   let body = {
+   
 mineralslId: 3,
 userId : 3,
 choline: 200,
@@ -1155,6 +1168,7 @@ APIPost("minerals", body)
 if (this.state.age >= 0.5 && this.state.age < 1 ) {
           
   let body = {
+   
 mineralslId: 3,
 userId : 3,
 choline: 150,
@@ -1197,6 +1211,7 @@ APIPost("minerals", body)
 if (this.state.age >= 0.5 ) {
           
   let body = {
+    
 mineralslId: 3,
 userId : 3,
 choline: 125,
@@ -1609,10 +1624,12 @@ if(this.state.gender == 2){
           Name:
           <input type="text" value={this.state.value} onChange={this.handleChangeSubmit} />
         </label>
+
         <label>
           Plan
           <input type="text" value={plan} onChange={this.handleChangePlan} />
         </label>
+
         <label>
           Active
           <input type="text" value={active} onChange={this.handleChangeActive} />
