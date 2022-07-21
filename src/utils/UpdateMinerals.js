@@ -1610,11 +1610,11 @@ if(this.state.gender == 2){
           <input type="text" value={this.state.value} onChange={this.handleChangeSubmit} />
         </label>
         <label>
-          Name:
+          Plan
           <input type="text" value={plan} onChange={this.handleChangePlan} />
         </label>
         <label>
-          Name:
+          Active
           <input type="text" value={active} onChange={this.handleChangeActive} />
         </label>
        
