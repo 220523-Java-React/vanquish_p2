@@ -19,11 +19,11 @@ import Register from './pages/Register';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-// import {API} from './utils/api';
+import {API} from './utils/api';
 
 function App() {
 
-  // API();
+  API();
   const [ results, setResults ] = useState([]);
 
   return (

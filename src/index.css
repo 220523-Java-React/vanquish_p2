@@ -186,7 +186,7 @@ font-family: 'Square Peg', cursive;
 #loginbox {
     padding: 100px 30px;
     text-align: center;
-    text-shadow: 2px 2px 5px black;
+    /* text-shadow: 2px 2px 5px black; */
     border:#000000;
     float: left;
     width: 50%;
@@ -236,6 +236,12 @@ font-family: 'Square Peg', cursive;
   #loginbox .button2:hover {
     background-color: white; 
     color: black; 
+  }
+
+  #loginbox span {
+    color: rgb(220,0,220);
+    cursor: pointer;
+    
   }
 
 footer {
