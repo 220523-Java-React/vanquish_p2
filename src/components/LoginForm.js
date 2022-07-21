@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
-import { APIPost } from "../utils/api";
+// import { APIPost } from "../utils/api";
 
 export default function LoginForm({setName}){
 
@@ -54,9 +55,41 @@ export default function LoginForm({setName}){
             password: password
         };
  
-        APIPost("userinfo", body);
- 
-        setName(username);
+        axios.post('userinfo', body)
+            .then(response => {
+                if(response.status === 200) {
+                    window.location.replace('/');
+                    setName(username);
+                }
+                else {
+                    setError("Error: Account not created!");  
+                }
+            })
+            .catch(err  => {
+                if (err.response.data.status === 500) {
+                    setError("Error: Username or Email Already Exists!");
+                }
+            }); 
+    
+        
+        // let result = APIPost('userinfo', body);
+
+        // if(result === undefined) {
+        //     console.log("RESULT1 = ", result);
+        //     setTimeout(() => {
+        //         console.log("RESULT timeout = ", result);
+        //     }, 10000);
+        // }    
+        // if (result === 200) {
+        //     setError("Error: Account not created!");
+        // }
+        // else if (result === 500) {
+        //     setError("Error: Username or Email Already Exists!");
+        // }
+        // else {
+            
+        // }
+        
     };
 
     const toggleRegister = () => {

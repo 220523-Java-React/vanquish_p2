@@ -21,7 +21,18 @@ export const APIGet = endpoint => axios.get(endpoint, {
 });
 
 export const APIPost = (endpoint, body) => {
-   axios.post(endpoint, body);
+    axios.post(endpoint, body)
+        .then(response => {
+            if(response.status === 200) {
+                return 200;
+            }
+            return -1;   
+        })
+        .catch(err  => {
+            if (err.response.data.status === 500) {
+                return 500;
+            }
+        }); 
 }
     
 
