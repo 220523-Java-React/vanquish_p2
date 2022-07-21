@@ -163,18 +163,27 @@ font-family: 'Fredericka the Great', cursive;
 }
 
 #userinputs {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     width: 75%;
     margin: auto;
-    text-align: center;
 } 
 
 /* .mySlides {display: none;} */
-#userinputs  fieldset {
+#userinputs  div {
     background-color: #f5f5f5;
     margin: 10px;
     padding: 20px;
     border: none;
+}
+
+#userinputs .left {
+    float: left;
+    width: 50%;
+}
+
+#userinputs .right {
+    float: right;
+    width: 50%;
 }
 
 #userinputs input {
@@ -268,6 +277,32 @@ font-family: 'Fredericka the Great', cursive;
 
 .howtom {
     width: 500px;
+}
+
+/* Feedback styles */
+.feedback_featured_container {
+    display: flex; 
+    justify-content: center; 
+    margin: 40px 0;
+}
+
+.table_featured {
+    border: 2px solid black;
+    width: 50% !important;
+}
+
+.table_container {
+    border: 2px solid black;
+}
+
+.table_header {
+    background: orange; 
+    border: 2px solid black; 
+    text-align: center
+}
+
+.table_field {
+    border: 2px solid black !important;
 }
 
 footer {
