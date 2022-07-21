@@ -11,7 +11,7 @@ import BasicTable from '../components/BasicTable';
 const Minerals = () => {
   return (
     <>
-      <div style={{fontSize: '200px', marginTop: '100px'}}>Minerals</div>
+      <div style={{fontSize: '100px', marginTop: '100px'}}>Minerals</div>
       <NavMenu />
       {/* <br></br>
       <br></br>
