@@ -8,173 +8,177 @@ import {
 
 import NavMenu from '../components/NavMenu';
 
+import simulation from '../utils/simulation';
+
 const BodyFeedback = ({results, name}) => {
 
-  let general = [
-    {
-      title: 'bmi',
-      reading: 'BMI reading here'
-    },
-    {
-      title: 'bf',
-      reading: 'BF reading here'
-    },
-    {
-      title: 'whe',
-      reading: 'WHE reading here'
-    },
-    {
-      title: 'whe',
-      reading: 'WHI reading here'
-    }
-  ];
+  results = simulation();
 
-  let vitamins = [
-    {
-      vitamin: 'Vitamin A',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin C',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin D',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin E',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin K',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin B1',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin B2',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin B3',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin B5',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin B7',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin B6',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin B12',
-      recommendation: 'recommendation'
-    },
-    {
-      vitamin: 'Vitamin B9',
-      recommendation: 'recommendation'
-    }
-  ];
+  // let general = [
+  //   {
+  //     title: 'bmi',
+  //     reading: 'BMI reading here'
+  //   },
+  //   {
+  //     title: 'bf',
+  //     reading: 'BF reading here'
+  //   },
+  //   {
+  //     title: 'whe',
+  //     reading: 'WHE reading here'
+  //   },
+  //   {
+  //     title: 'whe',
+  //     reading: 'WHI reading here'
+  //   }
+  // ];
 
-  let nutrients = [
-    {
-      nutrient: 'Calories',
-      recommendation: 'recommendation'
-    },
-    {
-      nutrient: 'Carbs',
-      recommendation: 'recommendation'
-    },
-    {
-      nutrient: 'Protein',
-      recommendation: 'recommendation'
-    },
-    {
-      nutrient: 'Fat',
-      recommendation: 'recommendation'
-    },
-    {
-      nutrient: 'Water',
-      recommendation: 'recommendation'
-    }
-  ]
+  // let vitamins = [
+  //   {
+  //     vitamin: 'Vitamin A',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin C',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin D',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin E',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin K',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin B1',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin B2',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin B3',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin B5',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin B7',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin B6',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin B12',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     vitamin: 'Vitamin B9',
+  //     recommendation: 'recommendation'
+  //   }
+  // ];
 
-  let minerals = [
-    {
-      mineral: 'Choline',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Magnesium',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Calcium',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Zinc',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Copper',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Selenium',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Manganese',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Phosphorus',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Potassium',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Iodine',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Chromium',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Molhybdenum',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Fluoride',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Sodium',
-      recommendation: 'recommendation'
-    },
-    {
-      mineral: 'Chloride',
-      recommendation: 'recommendation'
-    }
-  ];
+  // let nutrients = [
+  //   {
+  //     nutrient: 'Calories',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     nutrient: 'Carbs',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     nutrient: 'Protein',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     nutrient: 'Fat',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     nutrient: 'Water',
+  //     recommendation: 'recommendation'
+  //   }
+  // ]
 
-  let tempResults = [];
-  tempResults[0] = general;
-  tempResults[1] = vitamins;
-  tempResults[2] = nutrients;
-  tempResults[3] = minerals;
+  // let minerals = [
+  //   {
+  //     mineral: 'Choline',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Magnesium',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Calcium',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Zinc',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Copper',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Selenium',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Manganese',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Phosphorus',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Potassium',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Iodine',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Chromium',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Molhybdenum',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Fluoride',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Sodium',
+  //     recommendation: 'recommendation'
+  //   },
+  //   {
+  //     mineral: 'Chloride',
+  //     recommendation: 'recommendation'
+  //   }
+  // ];
+
+  // let tempResults = [];
+  // tempResults[0] = general;
+  // tempResults[1] = vitamins;
+  // tempResults[2] = nutrients;
+  // tempResults[3] = minerals;
 
   if (results.length === 0) {
     return (
@@ -234,12 +238,12 @@ const BodyFeedback = ({results, name}) => {
               General Recommendations
             </Grid>
 
-            {tempResults[0].map((item, index) => (
+            {results[0].map((item, index) => (
                 <Grid container key={index}>
-                  <Grid item className='table_field' xs={6}>
+                  <Grid item className='table_field' xs={2}>
                     {item.title}
                   </Grid>
-                  <Grid item className='table_field' xs={6}>
+                  <Grid item className='table_field' xs={10}>
                     {item.reading}
                   </Grid>
                 </Grid>
@@ -248,14 +252,14 @@ const BodyFeedback = ({results, name}) => {
           </Grid>
         </Box>
 
-        <Grid container justifyContent='space-between' spacing={5}>
+        <Grid container justifyContent='space-between' spacing={10}>
           <Grid item xs={12} lg={4}>
             <Grid container className='table_container' justifyContent='center'>
               <Grid item xs={12} className='table_header'>
                 Vitamin Recommendations
               </Grid>
               
-              {tempResults[1].map((item, index) => (
+              {results[1].map((item, index) => (
                 <Grid container key={index}>
                   <Grid item className='table_field' xs={6}>
                     {item.vitamin}
@@ -274,7 +278,7 @@ const BodyFeedback = ({results, name}) => {
                 Macronutrient Recommendations
               </Grid>
               
-              {tempResults[2].map((item, index) => (
+              {results[2].map((item, index) => (
                 <Grid container key={index}>
                   <Grid item className='table_field' xs={6}>
                     {item.nutrient}
@@ -293,7 +297,7 @@ const BodyFeedback = ({results, name}) => {
                 Mineral Recommendations
               </Grid>
               
-              {tempResults[3].map((item, index) => (
+              {results[3].map((item, index) => (
                 <Grid container key={index}>
                   <Grid item className='table_field' xs={6}>
                     {item.mineral}
