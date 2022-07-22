@@ -302,10 +302,33 @@ font-family: 'Fredericka the Great', cursive;
 }
 
 /* Feedback styles */
+.feedback_none_container {
+    background: rgb(220,220,220);
+}
+
+.feedback_none_title {
+    margin-top: 150px !important;
+    font-size: 140px !important;
+    font-family: serif !important;
+    font-weight: bold;
+    text-align: center;
+}
+
 .feedback_featured_container {
     display: flex; 
     justify-content: center; 
     margin: 40px 0;
+}
+
+.feedback_page_container {
+    margin-top: 100px; 
+    padding: 50px;
+    background: rgb(220,220,220);
+}
+
+.feedback_page_title {
+  font-size: 50px;
+  margin-bottom: 15px;
 }
 
 .table_featured {
@@ -320,14 +343,28 @@ font-family: 'Fredericka the Great', cursive;
 .table_header {
     background: orange; 
     border: 2px solid black; 
-    text-align: center
+    text-align: center;
+    padding: 5px;
+}
+
+.table_title {
+    font-size: 25px;
+}
+
+.table_nth_color:nth-child(even) {
+    background-color: lightblue;
 }
 
 .table_field {
     border: 2px solid black !important;
+    padding: 10px;
 }
 
+.table_text {
+    font-weight: bold;
+}
 
+/* End Feedback styles */
 
 footer {
     font-family: 'Quicksand', sans-serif;

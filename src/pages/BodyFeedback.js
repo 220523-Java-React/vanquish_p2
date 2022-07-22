@@ -14,185 +14,19 @@ APIGet('minerals').then(handleResponse
 
 function handleResponse(response){
 const data = response.data;
- 
+return( 
 <p>{data}</p>
-
+)
 }
 
 const BodyFeedback = ({results, name}) => {
 
-  // let general = [
-  //   {
-  //     title: 'bmi',
-  //     reading: 'BMI reading here'
-  //   },
-  //   {
-  //     title: 'bf',
-  //     reading: 'BF reading here'
-  //   },
-  //   {
-  //     title: 'whe',
-  //     reading: 'WHE reading here'
-  //   },
-  //   {
-  //     title: 'whe',
-  //     reading: 'WHI reading here'
-  //   }
-  // ];
-
-  // let vitamins = [
-  //   {
-  //     vitamin: 'Vitamin A',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin C',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin D',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin E',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin K',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin B1',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin B2',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin B3',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin B5',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin B7',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin B6',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin B12',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     vitamin: 'Vitamin B9',
-  //     recommendation: 'recommendation'
-  //   }
-  // ];
-
-  // let nutrients = [
-  //   {
-  //     nutrient: 'Calories',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     nutrient: 'Carbs',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     nutrient: 'Protein',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     nutrient: 'Fat',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     nutrient: 'Water',
-  //     recommendation: 'recommendation'
-  //   }
-  // ]
-
-  // let minerals = [
-  //   {
-  //     mineral: 'Choline',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Magnesium',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Calcium',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Zinc',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Copper',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Selenium',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Manganese',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Phosphorus',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Potassium',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Iodine',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Chromium',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Molhybdenum',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Fluoride',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Sodium',
-  //     recommendation: 'recommendation'
-  //   },
-  //   {
-  //     mineral: 'Chloride',
-  //     recommendation: 'recommendation'
-  //   }
-  // ];
-
-  // let tempResults = [];
-  // tempResults[0] = general;
-  // tempResults[1] = vitamins;
-  // tempResults[2] = nutrients;
-  // tempResults[3] = minerals;
-
   if (results.length === 0) {
     return (
       <>
-        <Grid container justifyContent='center' alignItems='center' style={{background: 'rgb(220,220,220)'}}>
-          <Grid item>
-            <Typography variant='h1' style={{marginTop: '150px', fontSize: '150px', fontFamily: 'serif', fontWeight: 'bold', textAlign: 'center'}}>
+        <Grid container className='feedback_none_container' justifyContent='center' alignItems='center'>
+          <Grid item xs={12}>
+            <Typography className='feedback_none_title' variant='h1'>
               NO RESULTS FOUND!!!!
             </Typography>
           </Grid>
@@ -233,27 +67,34 @@ const BodyFeedback = ({results, name}) => {
     <>
       {/* <div style={{fontSize: '200px', marginTop: '100px'}}>BodyFeedback</div> */}
 
-      <section style={{marginTop: '100px', padding: '50px'}}>
-        <h2>
+      <section className='feedback_page_container'>
+        <h2 className='feedback_page_title'>
           Body Feedback for {name}
         </h2>
-        <p>Here's your feedback based on the results you've recieved on the body info page.</p>
+        <h3>Here's your feedback based on the results you've recieved on the body info page.</h3>
         
         <Box className='feedback_featured_container'>
           <Grid container className='table_featured' justifyContent='center'>
             <Grid item xs={12} className='table_header'>
-              General Recommendations
+              <h4 className='table_title'>
+                General Recommendations
+              </h4>
+              
             </Grid>
 
             {results[0].map((item, index) => (
-                <Grid container key={index}>
-                  <Grid item className='table_field' xs={2}>
+              <Grid container key={index} className='table_nth_color'>
+                <Grid item className='table_field' xs={2}>
+                  <p className='table_text'>
                     {item.title}
-                  </Grid>
-                  <Grid item className='table_field' xs={10}>
-                    {item.reading}
-                  </Grid>
+                  </p>
                 </Grid>
+                <Grid item className='table_field' xs={10}>
+                  <p className='table_text'>
+                    {item.reading}
+                  </p>
+                </Grid>
+              </Grid>
             ))} 
 
           </Grid>
@@ -263,16 +104,22 @@ const BodyFeedback = ({results, name}) => {
           <Grid item xs={12} lg={4}>
             <Grid container className='table_container' justifyContent='center'>
               <Grid item xs={12} className='table_header'>
-                Vitamin Recommendations
+                <h4 className='table_title'>
+                  Vitamin Recommendations
+                </h4>
               </Grid>
               
               {results[1].map((item, index) => (
-                <Grid container key={index}>
+                <Grid container key={index} className='table_nth_color'>
                   <Grid item className='table_field' xs={6}>
-                    {item.vitamin}
+                    <p className='table_text'>
+                      {item.vitamin}
+                    </p>
                   </Grid>
                   <Grid item className='table_field' xs={6}>
-                    {item.recommendation}
+                    <p className='table_text'>
+                      {item.recommendation}
+                    </p>
                   </Grid>
                 </Grid>
               ))} 
@@ -282,16 +129,22 @@ const BodyFeedback = ({results, name}) => {
           <Grid item xs={12} lg={4}>
             <Grid container className='table_container' justifyContent='center'>
               <Grid item xs={12} className='table_header'>
-                Macronutrient Recommendations
+                <h4 className='table_title'>
+                  Macronutrient Recommendations
+                </h4>
               </Grid>
               
               {results[2].map((item, index) => (
-                <Grid container key={index}>
+                <Grid container key={index} className='table_nth_color'>
                   <Grid item className='table_field' xs={6}>
-                    {item.nutrient}
+                    <p className='table_text'>
+                      {item.nutrient}
+                    </p>
                   </Grid>
                   <Grid item className='table_field' xs={6}>
-                    {item.recommendation}
+                    <p className='table_text'>
+                      {item.recommendation}
+                    </p>
                   </Grid>
                 </Grid>
               ))} 
@@ -301,16 +154,23 @@ const BodyFeedback = ({results, name}) => {
           <Grid item xs={12} lg={4}>
             <Grid container className='table_container' justifyContent='center'>
               <Grid item xs={12} className='table_header'>
-                Mineral Recommendations
+                <h4 className='table_title'>
+                  Mineral Recommendations
+                </h4>
               </Grid>
               
               {results[3].map((item, index) => (
-                <Grid container key={index}>
+                <Grid container key={index} className='table_nth_color'>
                   <Grid item className='table_field' xs={6}>
-                    {item.mineral}
+                    <p className='table_text'>
+                      {item.mineral}
+                    </p>
+                    
                   </Grid>
                   <Grid item className='table_field' xs={6}>
-                    {item.recommendation}
+                    <p className='table_text'>
+                      {item.recommendation}
+                    </p>
                   </Grid>
                 </Grid>
               ))} 
