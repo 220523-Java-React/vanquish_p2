@@ -8,7 +8,7 @@ import {
 
 import NavMenu from '../components/NavMenu';
 import { API, APIGet } from '../utils/api';
-
+import simulation from '../utils/simulation';
 
 
 APIGet('minerals').then(handleResponse
@@ -21,7 +21,7 @@ const data = response.data;
 
 }
 
-import simulation from '../utils/simulation';
+
 
 const BodyFeedback = ({results, name}) => {
 
