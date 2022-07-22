@@ -8,6 +8,7 @@ import {
 
 import NavMenu from '../components/NavMenu';
 import { API, APIGet } from '../utils/api';
+import simulation from '../utils/simulation';
 
 
 
@@ -21,7 +22,6 @@ const data = response.data;
 
 }
 
-import simulation from '../utils/simulation';
 
 const BodyFeedback = ({results, name}) => {
 

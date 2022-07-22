@@ -10,12 +10,13 @@ import simulation from "../utils/simulation";
 
 const UserInput = ({setResults}) => {
  
+/*
   const runSimulation = () => {
     setResults(simulation());
   };
 
   runSimulation();
-  
+*/
   return (
     <>
       <div style={{fontSize: '100px', marginTop: '100px'}}>User Input</div>
@@ -30,14 +31,14 @@ const UserInput = ({setResults}) => {
             <span class="left">
               <div class="que">Select a unit of measure</div>
               <div class="ans"><input type="radio" id="inlbs" name="unit" value="1" required />
-              <label for="inlbs">US (inches & lbs)</label>
+              <label for="inlbs">US (inches & lbs)</label><br />
               <input type="radio" id="cmkg" name="unit" value="2" />
               <label for="cmkg">Metric (cm & kg)</label></div>
             </span>
           <span class="right">
           <div class="que">Select your gender:</div>
           <div class="ans"><input type="radio" id="male" name="gender" value="1" required />
-            <label for="male">Male</label>
+            <label for="male">Male</label><br />
             <input type="radio" id="female" name="gender" value="2" />
             <label for="female">Female</label></div>
           </span>
@@ -87,13 +88,13 @@ const UserInput = ({setResults}) => {
           <div class="que">Enter activity level:</div>
           <div class="ans">
             <input type="radio" id="sed" name="activity" value="1" required />
-            <label for="sed">Sedentary</label>
+            <label for="sed">Sedentary</label><br />
             <input type="radio" id="litact" name="activity" value="2" />
-            <label for="litact">Lightly Active</label>
+            <label for="litact">Lightly Active</label><br />
             <input type="radio" id="modact" name="activity" value="3" />
-            <label for="modact">Moderately Active</label>
+            <label for="modact">Moderately Active</label><br />
             <input type="radio" id="veryact" name="activity" value="4" />
-            <label for="veryact">Very Active</label>
+            <label for="veryact">Very Active</label><br />
             <input type="radio" id="extact" name="activity" value="5" />
             <label for="extact">Extremely Active</label>
             </div>
@@ -103,13 +104,13 @@ const UserInput = ({setResults}) => {
           <div class="que">Enter your weight goal: </div>
           <div class="ans">
             <input type="radio" id="losefast" name="goal" value="1" required />
-            <label for="losefast">Lose Fast</label>
+            <label for="losefast">Lose Fast</label><br />
             <input type="radio" id="losenorm" name="goal" value="2" />
-            <label for="losenorm">Lose Normal</label>
+            <label for="losenorm">Lose Normal</label><br />
             <input type="radio" id="maintain" name="goal" value="3" />
-            <label for="maintain">Maintain</label>
+            <label for="maintain">Maintain</label><br />
             <input type="radio" id="gainnorm" name="goal" value="4" />
-            <label for="gainnorm">Gain Noraml</label>
+            <label for="gainnorm">Gain Noraml</label><br />
             <input type="radio" id="gainfast" name="goal" value="5" />
             <label for="gainfast">Gain Fast</label>
             </div>
