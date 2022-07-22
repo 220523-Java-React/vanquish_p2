@@ -1,4 +1,5 @@
 import NavMenu from "../components/NavMenu";
+import { useEffect } from "react";
 
 import waistimg from '../assets/images/waist.png';
 import hipimg from '../assets/images/hip.png';
@@ -9,20 +10,21 @@ import Calculator from "../utils/UpdateMinerals";
 import simulation from "../utils/simulation";
 
 const UserInput = ({setResults}) => {
- 
-  const runSimulation = () => {
-    setResults(simulation());
-  };
 
-  runSimulation();
+  const runSimulation = async () => {
+    let results = await simulation();
+    console.log("RESULTS = " , results);
+    setResults(results);
+  };
+  
   return (
     <>
       <div style={{fontSize: '100px', marginTop: '100px'}}>User Input</div>
 
       <NavMenu />
-      <Calculator />
+      {/* <Calculator /> */}
       
-
+        <p onClick={runSimulation}> HELLO IM A BUTTON</p>
         <form id="userinputs" className="container">
         <p>Please fill in the following below to recieve your body information and health recommendations. </p>
           <div className="mySlides">
