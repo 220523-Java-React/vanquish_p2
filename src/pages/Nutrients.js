@@ -9,7 +9,7 @@ const Nutrients = () => {
 
       <NavMenu />
       
-      <section>
+      <section className="fact">
             {nutrients.map((nutrient, index) => (
                 <Box key={index}>
                     <Typography variant='h4'>

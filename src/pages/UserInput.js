@@ -19,13 +19,13 @@ const UserInput = ({setResults}) => {
   
   return (
     <>
-      <div style={{fontSize: '100px', marginTop: '100px'}}>User Input</div>
+      <div style={{fontSize: '100px', marginTop: '100px'}}></div>
 
       <NavMenu />
       {/* <Calculator /> */}
       
         <form id="userinputs" className="container">
-        <p>Please fill in the following below to recieve your body information and health recommendations. </p>
+        <p class="button">Please fill in the following below to recieve your body information and health recommendations. </p>
           <div className="mySlides">
             <span class="left">
               <div class="que">Select Unit of Measurement</div>
@@ -115,7 +115,7 @@ const UserInput = ({setResults}) => {
             </div>
           </span>
           </div>
-          <div className="mySlides"><button class="button">Enter</button> </div>
+          <div className="button"><button>Enter</button> </div>
           <p onClick={runSimulation}> .</p>
         </form>
     </>

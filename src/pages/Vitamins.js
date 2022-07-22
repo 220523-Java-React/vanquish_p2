@@ -17,7 +17,7 @@ const Vitamins = () => {
             <h2>{key}: {vitacalc[key]}</h2>
           )
         })} */}
-
+<section className="fact">
       {vitamins.map((vitamin, index) => (
           <Box key={index}>
               <Typography variant='h4'>
@@ -35,7 +35,7 @@ const Vitamins = () => {
               </Typography>
           </Box>
       ))} 
-       
+       </section>
     </>
   )
 };
