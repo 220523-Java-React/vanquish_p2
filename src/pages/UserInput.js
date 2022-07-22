@@ -15,7 +15,6 @@ const UserInput = ({setResults}) => {
   };
 
   runSimulation();
-  
   return (
     <>
       <div style={{fontSize: '100px', marginTop: '100px'}}>User Input</div>
