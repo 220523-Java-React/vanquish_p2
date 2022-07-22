@@ -79,7 +79,7 @@ const BodyFeedback = ({results, name}) => {
               <h4 className='table_title'>
                 General Recommendations
               </h4>
-              
+              <img src={genimg} alt="Vitamins"  className="titleimg" />
             </Grid>
 
             {results[0].map((item, index) => (
@@ -107,6 +107,7 @@ const BodyFeedback = ({results, name}) => {
                 <h4 className='table_title'>
                   Vitamin Recommendations
                 </h4>
+                <img src={vitimg} alt="Vitamins"  className="titleimg" />
               </Grid>
               
               {results[1].map((item, index) => (
@@ -132,6 +133,7 @@ const BodyFeedback = ({results, name}) => {
                 <h4 className='table_title'>
                   Macronutrient Recommendations
                 </h4>
+                <img src={macimg} alt="Macro Nutrients" className="titleimg" />
               </Grid>
               
               {results[2].map((item, index) => (
@@ -157,6 +159,7 @@ const BodyFeedback = ({results, name}) => {
                 <h4 className='table_title'>
                   Mineral Recommendations
                 </h4>
+                <img src={minimg} alt="Minerals" className="titleimg" />
               </Grid>
               
               {results[3].map((item, index) => (

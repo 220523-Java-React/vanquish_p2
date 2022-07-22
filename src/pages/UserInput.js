@@ -28,14 +28,14 @@ const UserInput = ({setResults}) => {
         <p>Please fill in the following below to recieve your body information and health recommendations. </p>
           <div className="mySlides">
             <span class="left">
-              <div class="que">Select a unit of measure</div>
+              <div class="que">Select Unit of Measurement</div>
               <div class="ans"><input type="radio" id="inlbs" name="unit" value="1" required />
               <label for="inlbs">US (inches & lbs)</label><br />
               <input type="radio" id="cmkg" name="unit" value="2" />
               <label for="cmkg">Metric (cm & kg)</label></div>
             </span>
           <span class="right">
-          <div class="que">Select your gender:</div>
+          <div class="que">Select Your Gender</div>
           <div class="ans"><input type="radio" id="male" name="gender" value="1" required />
             <label for="male">Male</label><br />
             <input type="radio" id="female" name="gender" value="2" />
@@ -45,46 +45,46 @@ const UserInput = ({setResults}) => {
 
           <div className="mySlides">
           <span class="left">
-          <div class="que">Enter your age:</div>
+          <div class="que">Enter Your Age</div>
           <div class="ans"><input type="number" id="age" name="age" placeholder="i.e. 23" required /></div>
           </span>
 
           <span class="right">
-          <div class="que">Enter your weight:</div>
+          <div class="que">Enter Your Weight</div>
           <div class="ans"><input type="number" id="weight" name="weight" placeholder="i.e. 130 (lbs) or 59 (kg)" required /></div>
           </span>
           </div>
 
           <div className="mySlides">
-            <span class="left"><img class ="howtom" src={heightimg} alt='' /></span>
-            <span class="right"><div class="que">Enter your height:</div>
+            <span class="left"><img class ="howtom" src={heightimg} /></span>
+            <span class="right"><div class="que">Enter Your Height</div>
             <div class="ans"><input type="number" id="height" name="height" placeholder="i.e. 67 (in) or 170 (cm)" required /></div>
             </span>
           </div>
 
           <div className="mySlides">
-          <span class="left"><img class ="howtom" src={neckimg} alt='' /></span>
-          <span class="right"><div class="que">Enter your neck circumference:</div>
+          <span class="left"><img class ="howtom" src={neckimg} /></span>
+          <span class="right"><div class="que">Enter Your Neck Circumference</div>
           <div class="ans"><input type="number" id="neck" placeholder="i.e. 14 (in) or 36 (cm)" name="neck" required /></div>
           </span>
           </div>
 
           <div className="mySlides">
-          <span class="left"><img class ="howtom" src={waistimg} alt='' /></span>
-          <span class="right"><div class="que">Enter your waist circumference:</div>
+          <span class="left"><img class ="howtom" src={waistimg} /></span>
+          <span class="right"><div class="que">Enter Your Waist Circumference</div>
           <div class="ans"><input type="number" id="waist" placeholder="i.e. 38 (in) or 98 (cm)" required /></div></span>
           </div>
 
           <div className="mySlides">
           <span class="left"><img class ="howtom" src={hipimg} alt='' /></span>
           <span class="right">
-            <div class="que">Enter your hip circumference:</div> 
+            <div class="que">Enter your Hip Circumference</div> 
             <div class="ans"><input type="number" id="hip" placeholder="i.e. 40 (in) or 102 (cm)" name="hip" required /></div></span>
           </div>
 
           <div className="mySlides">
           <span class="left">
-          <div class="que">Enter activity level:</div>
+          <div class="que">Enter Your Activity Level</div>
           <div class="ans">
             <input type="radio" id="sed" name="activity" value="1" required />
             <label for="sed">Sedentary</label><br />
@@ -100,7 +100,7 @@ const UserInput = ({setResults}) => {
           </span>
 
           <span class="right">
-          <div class="que">Enter your weight goal: </div>
+          <div class="que">Enter Your Weight Goal</div>
           <div class="ans">
             <input type="radio" id="losefast" name="goal" value="1" required />
             <label for="losefast">Lose Fast</label><br />
