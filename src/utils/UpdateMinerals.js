@@ -10,7 +10,7 @@ import BasicTable from "../components/BasicTable";
 import { APIPost } from "./api";
 function MineralsAndVitamins(props) {
     
-    if (props.age >= 71 && props.gender === 2) {
+    if (props.age >= 71 && props.gender === 1) {
       return <p>
          vitaminA = 700;
             vitaminC = 75;
@@ -44,7 +44,7 @@ function MineralsAndVitamins(props) {
  
               
     }
-    if(props.age >= 71 && props.gender ===1){
+    if(props.age >= 71 && props.gender ===0){
       return <p>vitaminA = 700;
       vitaminC = 75;
       vitaminD = 20;
@@ -74,7 +74,7 @@ function MineralsAndVitamins(props) {
       fluoride = 3;
       chloride = 1.8;</p>
     }
-    if(props.age >= 51 && props.age <71 && props.gender ===2){
+    if(props.age >= 51 && props.age <71 && props.gender ===1){
        return <p>  vitaminA = 700;
             vitaminC = 75;
             vitaminD = 15;
@@ -105,7 +105,7 @@ function MineralsAndVitamins(props) {
             chloride = 2;
             </p>
     }
-    if (props.age >= 51 && props.age < 71 && props.gender === 1)
+    if (props.age >= 51 && props.age < 71 && props.gender === 0)
         {
             return <p>vitaminA = 900;
             vitaminC = 90;
@@ -138,7 +138,7 @@ function MineralsAndVitamins(props) {
             </p>
         }
 
-        if (props.age >= 19 && props.age < 51 && props.gender === 2)
+        if (props.age >= 19 && props.age < 51 && props.gender === 1)
         {
            return <p>  vitaminA = 700;
             vitaminC = 75;
@@ -170,7 +170,7 @@ function MineralsAndVitamins(props) {
             chloride = 2.3;
             </p>
         }
-        if (props.age >= 19 && props.age < 51 && props.gender === 1)
+        if (props.age >= 19 && props.age < 51 && props.gender === 0)
         {
             return <p> vitaminA = 900;
             vitaminC = 90;
@@ -202,7 +202,7 @@ function MineralsAndVitamins(props) {
             chloride = 2.3;
             </p>
         }
-        if (props.age >= 14 && props.age < 19 && props.gender === 2)
+        if (props.age >= 14 && props.age < 19 && props.gender === 1)
         {
             return <p> vitaminA = 700;
             vitaminC = 65;
@@ -234,7 +234,7 @@ function MineralsAndVitamins(props) {
             chloride = 2.3;
             </p>
         }
-        if (props.age >= 14 && props.age < 19 && props.gender === 1)
+        if (props.age >= 14 && props.age < 19 && props.gender === 0)
         {
             return <p> vitaminA = 900;
             vitaminC = 75;
@@ -266,7 +266,7 @@ function MineralsAndVitamins(props) {
             chloride = 2.3;
             </p>
         }
-        if (props.age >= 9 && props.age < 14 && props.gender === 2)
+        if (props.age >= 9 && props.age < 14 && props.gender === 1)
         {
           return <p>  vitaminA = 600;
             vitaminC = 45;
@@ -298,7 +298,7 @@ function MineralsAndVitamins(props) {
             chloride = 2.3;
             </p>
         }
-        if (props.age >= 9 && props.age < 14 && props.gender === 1)
+        if (props.age >= 9 && props.age < 14 && props.gender === 0)
         {
             return <p> vitaminA = 600;
             vitaminC = 45;
@@ -464,8 +464,15 @@ function MineralsAndVitamins(props) {
   }
 
  function Bmi(props){
-  let bmi = (700 * props.weight) / (props.height * props.height);
-  let bmimetric = (props.weight / (props.height * props.height)) * 10000;
+  let bmi;
+  let bmimetric;
+  if(props.metric == 0){
+     bmi = (700 * props.weight) / (props.height * props.height);
+  }
+   if(props.metric == 1){
+     bmimetric = (props.weight / (props.height * props.height)) * 10000;
+   }
+   
   var bmiread = "Based on your BMI, You Are: ";
   if(bmi < 15)
        bmiread += "Very Severly Undweight.";
@@ -486,19 +493,31 @@ function MineralsAndVitamins(props) {
  }
 
  function Bfp(props){
-  if(props.gender == 1){
+
+  let wscale;
+  let hscale;
+
+  if(props.metric == 1){
+    wscale = 1;
+    hscale = 1;
+  }
+  if(props.metric == 0){
+    wscale = 2.205;
+    hscale = 2.54;
+  }
+  if(props.gender == 0){
   var bfp = (495 / (1.0324 - 0.19077 * Math.log10((props.waist - props.neck)* props.hscale) + 0.15456 * Math.log10(props.height))) - 450;
   }
 
   
-  if(props.gender == 2){ 
+  if(props.gender == 1){ 
   var bfp = (495 / (1.29579 - 0.35004 * Math.log10((props.waist + props.hip - props.neck)*props.hscale) + 0.22100 * Math.log10(props.height))) - 450;
     }
  
   var bfread = "Based On Your Body Fat Percentage, You ";
   let mbf = 0;
 
-if(props.gender === 1) mbf = 7;
+if(props.gender === 0) mbf = 7;
 
 if (bfp < (14-mbf)) bfread += "Have Only Essential Fat.";
 if (bfp >= (14-mbf) && bfp < (21-mbf)) bfread += "Are An Athlete.";
@@ -515,15 +534,39 @@ if (bfp >= (32-mbf)) bfread += "Are Obese";
 
  function Ibw(props){
 
+  let wscale;
+  let hscale;
+
+  if(props.metric == 1){
+    wscale = 1;
+    hscale = 1;
+  }
+  if(props.metric == 0){
+    wscale = 2.205;
+    hscale = 2.54;
+  }
+
   let ibwmale = (50 + (0.91 * ((props.height * props.hscale) - 152.4))) * props.wscale;
   let ibwfemale = (45.5 + (0.91 * ((props.height * props.hscale) - 152.4))) * props.wscale;
 
+   
   return <p>Male ibw: {Math.round(ibwmale *100)/100 } %<br></br>
   Female ibw: {Math.round(ibwfemale *100)/100} %</p>;
 
  }
 
  function Bsa(props){
+
+  let wscale;
+  let hscale;
+  if(props.metric == 1){
+    wscale = 1;
+    hscale = 1;
+  }
+  if(props.metric == 0){
+    wscale = 2.205;
+    hscale = 2.54;
+  }
   let bsa = Math.sqrt(((props.height * props.hscale) * (props.weight / props.wscale)) / 3600);
 
   return <p>BSA : {Math.round(bsa*100)/100 } %</p>;
@@ -531,6 +574,17 @@ if (bfp >= (32-mbf)) bfread += "Are Obese";
  }
 
  function Bmr(props){
+
+  let wscale;
+  let hscale;
+  if(props.metric == 1){
+    wscale = 1;
+    hscale = 1;
+  }
+  if(props.metric == 0){
+    wscale = 2.205;
+    hscale = 2.54;
+  }
      let bmrmale = 66 + (6.3 * (props.weight / props.wscale)) + (12.9 * (props.height / props.hscale)) - (6.8 * props.age);
 
      let bmrfemale = 655 + (4.3 * (props.weight / props.wscale)) + (4.7 * (props.height / props.hscale)) - (4.7 * props.age);
@@ -544,7 +598,7 @@ if (bfp >= (32-mbf)) bfread += "Are Obese";
   var whe = props.waist / props.height;
 
 let mwhe = 1; 
-if(props.gender === 1) mwhe = 0.92;
+if(props.gender === 0) mwhe = 0.92;
 
 if (whe >= (0.58/mwhe)) wheread += "Highly Obese.";
 if (whe < (0.58/mwhe) && whe >= (0.54/mwhe)) wheread += "Extremely Overweight.";
@@ -563,7 +617,7 @@ return <p>{wheread}</p>
   var whiread = "Your Waist To Hip Ratio Is "
 
 let mwhi = 0
-if(props.gender === 1) mwhi = 0.1;
+if(props.gender === 0) mwhi = 0.1;
 
 if (whi < (0.85-mwhi)) whiread += "Excellent.";
 if (whi >= (0.85-mwhi) && whi < (0.90-mwhi)) whiread += "Good.";
@@ -591,6 +645,8 @@ return <p>{whiread}</p>
       this.handleChangeSubmit = this.handleChangeSubmit.bind(this);
       this.handleChangePlan = this.handleChangePlan.bind(this);
       this.handleChangeActive = this.handleChangeActive.bind(this);
+      this.handleChangeUserId = this.handleChangeUserId.bind(this);
+      this.handleChangeMetric = this.handleChangeMetric.bind(this);
       this.state = {value: ''};
       this.state = {age: ''};
       this.state ={gender: ''};
@@ -603,6 +659,8 @@ return <p>{whiread}</p>
       this.state = {wscale: ''};
       this.state = {plan: ''};
       this.state = {active: ''};
+      this.state = {userid: ''};
+      this.state = {metric: ''};
      
     }
   
@@ -646,16 +704,24 @@ return <p>{whiread}</p>
     handleChangeActive(e) {
       this.setState({active: e.target.value});
     }
+    
+    handleChangeUserId(e){
+      this.setState({userid: e.target.value});
+    }
+
+    handleChangeMetric(e){
+      this.setState({metric: e.target.value});
+    }
 
     handleSubmit(e){
 
 
-      if (this.state.age >= 71 && this.state.gender == 2) {
+      if (this.state.age >= 71 && this.state.gender == 1) {
           
              let body = {
             
           mineralslId: 3,
-          userId : 3,
+          userId : this.state.userid,
           choline: 425,
           magnesium: 420,
           calcium: 1200,
@@ -673,7 +739,7 @@ return <p>{whiread}</p>
           chloride: 1.8
            }
            let bodyVitamin = {
-            userId: 2,
+            userId: this.state.userid,
             vitaminA: 700,
             vitaminC: 75,
             vitaminD: 20,
@@ -693,12 +759,12 @@ return <p>{whiread}</p>
           APIPost("vitamins", bodyVitamin)
       }
     
-      if (this.state.age >= 71 && this.state.gender == 1) {
+      if (this.state.age >= 71 && this.state.gender == 0) {
           
         let body = {
           
      mineralslId: 3,
-     userId : 3,
+     userId : this.state.userid,
      choline: 425,
      magnesium: 420,
      calcium: 1200,
@@ -717,7 +783,7 @@ return <p>{whiread}</p>
       }
       let bodyVitamin = {
         
-        userId: 2,
+        userId: this.state.userid,
         vitaminA: 700,
         vitaminC: 75,
         vitaminD: 20,
@@ -738,12 +804,12 @@ return <p>{whiread}</p>
      APIPost("vitamins", bodyVitamin) 
      }
 
-     if (this.state.age >= 51 && this.state.age < 71 && this.state.gender == 2) {
+     if (this.state.age >= 51 && this.state.age < 71 && this.state.gender == 1) {
           
         let body = {
         
      mineralslId: 3,
-     userId : 3,
+     userId : this.state.userid,
      choline: 425,
      magnesium: 420,
      calcium: 1200,
@@ -761,7 +827,7 @@ return <p>{whiread}</p>
      chloride: 2
       }
       let bodyVitamin = {
-        userId: 2,
+        userId: this.state.userid,
         vitaminA: 700,
         vitaminC: 75,
         vitaminD: 15,
@@ -787,7 +853,7 @@ return <p>{whiread}</p>
       let body = {
         
    mineralslId: 3,
-   userId : 3,
+   userId : this.state.userid,
    choline: 500,
    magnesium: 420,
    calcium: 1000,
@@ -805,7 +871,7 @@ return <p>{whiread}</p>
    chloride: 2
     }
     let bodyVitamin = {
-      userId: 2,
+      userId: this.state.userid,
       vitaminA: 900,
       vitaminC: 90,
       vitaminD: 15,
@@ -825,12 +891,12 @@ return <p>{whiread}</p>
    APIPost("minerals", body)  
    }
 
-   if (this.state.age >= 19 && this.state.age < 51 && this.state.gender == 2) {
+   if (this.state.age >= 19 && this.state.age < 51 && this.state.gender == 1) {
           
     let body = {
      
  mineralslId: 3,
- userId : 3,
+ userId : this.state.userid,
  choline: 425,
  magnesium: 320,
  calcium: 1000,
@@ -848,7 +914,7 @@ return <p>{whiread}</p>
  chloride: 2.3
   }
   let bodyVitamin = {
-    userId: 2,
+    userId: this.state.userid,
     vitaminA: 700,
     vitaminC: 75,
     vitaminD: 15,
@@ -868,12 +934,12 @@ return <p>{whiread}</p>
  APIPost("minerals", body)  
  }
 
-  if (this.state.age >= 19 && this.state.age < 51 && this.state.gender == 1) {
+  if (this.state.age >= 19 && this.state.age < 51 && this.state.gender == 0) {
           
     let body = {
       
  mineralslId: 3,
- userId : 3,
+ userId : this.state.userid,
  choline: 500,
  magnesium: 420,
  calcium: 1000,
@@ -891,7 +957,7 @@ return <p>{whiread}</p>
  chloride: 2.3
   }
   let bodyVitamin = {
-    userId: 2,
+    userId: this.state.userid,
     vitaminA: 900,
     vitaminC: 90,
     vitaminD: 15,
@@ -911,12 +977,12 @@ return <p>{whiread}</p>
  APIPost("minerals", body)  
  }
 
- if (this.state.age >= 14 && this.state.age < 19 && this.state.gender == 2) {
+ if (this.state.age >= 14 && this.state.age < 19 && this.state.gender == 1) {
           
   let body = {
    
 mineralslId: 3,
-userId : 3,
+userId : this.state.userid,
 choline: 400,
 magnesium: 360,
 calcium: 1300,
@@ -934,7 +1000,7 @@ sodium: 2300,
 chloride: 2.3
 }
 let bodyVitamin = {
-  userId: 2,
+  userId: this.state.userid,
   vitaminA: 700,
   vitaminC: 65,
   vitaminD: 15,
@@ -954,12 +1020,12 @@ let bodyVitamin = {
 APIPost("minerals", body)  
 }
 
-if (this.state.age >= 14 && this.state.age < 19 && this.state.gender == 1) {
+if (this.state.age >= 14 && this.state.age < 19 && this.state.gender == 0) {
           
   let body = {
    
 mineralslId: 3,
-userId : 3,
+userId : this.state.userid,
 choline: 550,
 magnesium: 410,
 calcium: 1300,
@@ -977,7 +1043,7 @@ sodium: 2300,
 chloride: 2.3
 }
 let bodyVitamin = {
-  userId: 2,
+  userId: this.state.userid,
   vitaminA: 900,
   vitaminC: 75,
   vitaminD: 15,
@@ -997,12 +1063,12 @@ let bodyVitamin = {
 APIPost("minerals", body)  
 }
 
-if (this.state.age >= 9 && this.state.age < 14 && this.state.gender == 2) {
+if (this.state.age >= 9 && this.state.age < 14 && this.state.gender == 1) {
           
   let body = {
    
 mineralslId: 3,
-userId : 3,
+userId : this.state.userid,
 choline: 375,
 magnesium: 240,
 calcium: 1300,
@@ -1020,7 +1086,7 @@ sodium: 2300,
 chloride: 2.3
 }
 let bodyVitamin = {
-  userId: 2,
+  userId: this.state.userid,
   vitaminA: 600,
   vitaminC: 45,
   vitaminD: 15,
@@ -1040,12 +1106,12 @@ let bodyVitamin = {
 APIPost("minerals", body)  
 }
 
-if (this.state.age >= 9 && this.state.age < 14 && this.state.gender == 1) {
+if (this.state.age >= 9 && this.state.age < 14 && this.state.gender == 0) {
           
   let body = {
     
 mineralslId: 3,
-userId : 3,
+userId : this.state.userid,
 choline: 375,
 magnesium: 240,
 calcium: 1300,
@@ -1063,7 +1129,7 @@ sodium: 2300,
 chloride: 2.3
 }
 let bodyVitamin = {
-  userId: 2,
+  userId: this.state.userid,
   vitaminA: 600,
   vitaminC: 45,
   vitaminD: 15,
@@ -1088,7 +1154,7 @@ if (this.state.age >= 4 && this.state.age < 9 ) {
   let body = {
     
 mineralslId: 3,
-userId : 3,
+userId : this.state.userid,
 choline: 250,
 magnesium: 130,
 calcium: 1000,
@@ -1106,7 +1172,7 @@ sodium: 2300,
 chloride: 1.9
 }
 let bodyVitamin = {
-  userId: 2,
+  userId: this.state.userid,
   vitaminA: 400,
   vitaminC: 25,
   vitaminD: 15,
@@ -1131,7 +1197,7 @@ if (this.state.age >= 1 && this.state.age < 4 ) {
   let body = {
    
 mineralslId: 3,
-userId : 3,
+userId : this.state.userid,
 choline: 200,
 magnesium: 80,
 calcium: 700,
@@ -1149,7 +1215,7 @@ sodium: 2300,
 chloride: 1.5
 }
 let bodyVitamin = {
-  userId: 2,
+  userId: this.state.userid,
   vitaminA: 300,
   vitaminC: 15,
   vitaminD: 15,
@@ -1174,7 +1240,7 @@ if (this.state.age >= 0.5 && this.state.age < 1 ) {
   let body = {
    
 mineralslId: 3,
-userId : 3,
+userId : this.state.userid,
 choline: 150,
 magnesium: 75,
 calcium: 260,
@@ -1192,7 +1258,7 @@ sodium: 2300,
 chloride: 1.5
 }
 let bodyVitamin = {
-  userId: 2,
+  userId: this.state.userid,
   vitaminA: 500,
   vitaminC: 50,
   vitaminD: 10,
@@ -1217,7 +1283,7 @@ if (this.state.age >= 0.5 ) {
   let body = {
     
 mineralslId: 3,
-userId : 3,
+userId : this.state.userid,
 choline: 125,
 magnesium: 30,
 calcium: 200,
@@ -1235,7 +1301,7 @@ sodium: 2300,
 chloride: 1.5
 }
 let bodyVitamin = {
-  userId: 2,
+  userId: this.state.userid,
   vitaminA: 400,
   vitaminC: 40,
   vitaminD: 10,
@@ -1256,15 +1322,24 @@ APIPost("minerals", body)
 }
 
 //BODY FEED BACK
+let wscale;
+let hscale;
 
-let hscale = 2.54; let wscale = 2.205;
+if(this.state.metric == 1){
+  wscale = 1;
+  hscale = 1;
+}
+if(this.state.metric == 0){
+  wscale = 2.205;
+  hscale = 2.54;
+}
 
 let whe = this.state.waist / this.state.height;
 let whi = this.state.waist / this.state.hip;
 
 let bmi =(700 * this.state.weight) / (this.state.height * this.state.height)
 
-if(this.state.gender == 1){
+if(this.state.gender == 0){
 
   
    //IBW - FOR MALE
@@ -1283,7 +1358,7 @@ if(this.state.gender == 1){
   //  APIPost("bodyfeedback", body)
 }
 
-if(this.state.gender == 2){
+if(this.state.gender == 1){
      //IBW - FOR FEMALE 
      var ibw = (45.5 + (0.91 * ((this.state.height * hscale) - 152.4))) * wscale;
      //BFP - FOR FEMALE
@@ -1306,7 +1381,7 @@ if(this.state.gender == 2){
     let bfread; 
 
     let mbf = 0;
-    if(this.state.gender == 1) mbf = 7;
+    if(this.state.gender == 0) mbf = 7;
 
     if (bfp < (14-mbf)) bfread = "ONLY_ESSENTIAL_FAT";
     if (bfp >= (14-mbf) && bfp < (21-mbf)) bfread = "ATHLETE";
@@ -1318,7 +1393,7 @@ if(this.state.gender == 2){
     let wheread;
 
     let mwhe = 1; 
-    if(this.state.gender == 1) mwhe = 0.92;
+    if(this.state.gender == 0) mwhe = 0.92;
 
     if (whe >= (0.58/mwhe)) wheread = "HIGHLY_OBESE";
     if (whe < (0.58/mwhe) && whe >= (0.54/mwhe)) wheread = "EXTREMELY_OVERWEIGHT";
@@ -1331,14 +1406,14 @@ if(this.state.gender == 2){
     let whiread;
 
     let mwhi = 0
-    if(this.state.gender == 1) mwhi = 0.1;
+    if(this.state.gender == 0) mwhi = 0.1;
 
     if (whi < (0.85-mwhi)) whiread = "EXCELLENT";
     if (whi >= (0.85-mwhi) && whi < (0.90-mwhi)) whiread = "GOOD";
     if (whi >= (0.90-mwhi) && whi < (0.95-mwhi)) whiread = "AVERAGE";
     if (whi >= (0.95-mwhi)) whiread = "BAD";
 
-    let bodyfeedback = { userId: 2,
+    let bodyfeedback = { userId: this.state.userid,
     bodyMassIndex: bmiread,
     bodyFatPercentage: bfread,
     waistToHeight: wheread,
@@ -1349,77 +1424,111 @@ if(this.state.gender == 2){
    let start;
    let need;
    let water;
+   if(this.state.gender ==0){
+     water = (this.state.weight * (0.5))
+   }
 
-   if(this.state.active == 1){
+   if(this.state.gender ==1){
+    water = ((this.state.weight * 2.205) * (0.5));
+   }
+    
+
+   if(this.state.active == 0){
      start = bmr * 1.2;
-     if(this.state.plan == 5){
+     if(this.state.plan == 4){
       need = start * 1.4;
-     }
-     if (this.state.plan == 4)
-     {
-         need = start * 1.2;
      }
      if (this.state.plan == 3)
      {
-         need = start;
+         need = start * 1.2;
      }
      if (this.state.plan == 2)
      {
-         need = start * 0.8;
+         need = start;
      }
      if (this.state.plan == 1)
+     {
+         need = start * 0.8;
+     }
+     if (this.state.plan == 0)
      {
          need = start * 0.6;
      }   
    }
 
-   if (this.state.active == 2)
+   if (this.state.active == 1)
    {
        start = bmr * 1.375;
        water = water + 12;
-       if (this.state.plan == 5)
+       if (this.state.plan == 4)
        {
            need = start * 1.4;
        }
-       if (this.state.plan == 4)
+       if (this.state.plan == 3)
        {
            need = start * 1.2;
        }
-       if (this.state.plan == 3)
+       if (this.state.plan == 2)
        {
            need = start;
        }
-       if (this.state.plan == 2)
+       if (this.state.plan == 1)
        {
            need = start * 0.8;
        }
-       if (this.state.plan == 1)
+       if (this.state.plan == 0)
        {
            need = start * 0.6;
        }
    }  
 
-   if (this.state.active == 3)
+   if (this.state.active == 2)
    {
        start = bmr * 1.55;
        water = water + 24;
-       if (this.state.plan == 5)
+       if (this.state.plan == 4)
        {
            need = start * 1.4;
        }
-       if (this.state.plan == 4)
+       if (this.state.plan == 3)
        {
            need = start * 1.2;
        }
-       if (this.state.plan == 3)
+       if (this.state.plan == 2)
        {
            need = start;
        }
-       if (this.state.plan == 2)
+       if (this.state.plan == 1)
        {
            need = start * 0.8;
        }
+       if (this.state.plan == 0)
+       {
+           need = start * 0.6;
+       }
+   }
+
+   if (this.state.active == 3)
+   {
+       start = bmr * 1.725;
+       water = water + 36;
+       if (this.state.plan == 4)
+       {
+           need = start * 1.4;
+       }
+       if (this.state.plan == 3)
+       {
+           need = start * 1.2;
+       }
+       if (this.state.plan == 2)
+       {
+           need = start;
+       }
        if (this.state.plan == 1)
+       {
+           need = start * 0.8;
+       }
+       if (this.state.plan == 0)
        {
            need = start * 0.6;
        }
@@ -1427,59 +1536,100 @@ if(this.state.gender == 2){
 
    if (this.state.active == 4)
    {
-       start = bmr * 1.725;
-       water = water + 36;
-       if (this.state.plan == 5)
-       {
-           need = start * 1.4;
-       }
-       if (this.state.plan == 4)
-       {
-           need = start * 1.2;
-       }
-       if (this.state.plan == 3)
-       {
-           need = start;
-       }
-       if (this.state.plan == 2)
-       {
-           need = start * 0.8;
-       }
-       if (this.state.plan == 1)
-       {
-           need = start * 0.6;
-       }
-   }
-
-   if (this.state.active == 5)
-   {
        start = bmr * 1.9;
        water = water + 48;
-       if (this.state.plan == 5)
+       if (this.state.plan == 4)
        {
            need = start * 1.4;
        }
-       if (this.state.plan == 4)
+       if (this.state.plan == 3)
        {
            need = start * 1.2;
        }
-       if (this.state.plan == 3)
+       if (this.state.plan == 2)
        {
            need = start;
        }
-       if (this.state.plan == 2)
+       if (this.state.plan == 1)
        {
            need = start * 0.8;
        }
-       if (this.state.plan == 1)
+       if (this.state.plan == 0)
        {
            need = start * 0.6;
        }
-   }
-    
+   }  
+           //calories = need
          let carbs = (need * .4) / 4;
          let proteins = (need * .3) / 4;
          let fats = (need * 0.3) / 9;
+         water = Math.round(water*100)/100;
+
+         let fm = (bfp *.01) * this.state.weight;
+         let lm = this.state.weight - fm;
+
+         fm =  Math.round(fm*100)/100;
+         lm = Math.round(lm*100)/100;
+
+         bmi = Math.round(bmi*100)/100;
+
+         bfp = Math.round(bfp*100)/100;
+
+         whe = Math.round(whe*100)/100;
+
+         whi = Math.round(whi*100)/100;
+
+         bmr = Math.round(bmr*100)/100;
+
+         ibw = Math.round(ibw*100)/100;
+
+        let bodyfeedbackbody = {
+          userId: this.state.userid,
+          bodyMassIndex: bmi,
+          bodyFatPercentage:bfp,
+          fatMass: fm,
+          leanMass: lm,
+          waistToHeightRatio: whe,
+          waistToHipRatio: whi,
+          basalMetabolicRate: bmr,
+          idealBodyWeight: ibw
+        }
+
+
+      let nutrientsbody = {     
+        userId : this.state.userid,
+        protein : proteins,
+        calories : need,
+        fat : fats,
+        water : water,
+        carbs : carbs
+      }
+         
+
+        APIPost("bodyinfo", bodyfeedbackbody)
+
+        APIPost("nutrients", nutrientsbody)
+
+        let progressbody = {
+          userId: this.state.userid,
+          age: this.state.age,
+          height: this.state.height,
+          weight: this.state.weight,
+          waist: this.state.waist,
+          neck: this.state.neck,
+          hip: this.state.hip,
+          unitOfMeasurement: this.state.metric,
+          gender:this.state.gender,
+          activityLevel: this.state.active,
+          weightGoal: this.state.plan
+          }
+
+          APIPost("progress", progressbody)
+
+
+
+
+
 
 
 
@@ -1551,6 +1701,8 @@ if(this.state.gender == 2){
       const wscale = this.state.wscale;
       const active = this.state.active;
       const plan = this.state.plan;
+      const userid = this.state.userid;
+      const metric = this.state.metric;
       
       return (
         <fieldset>
@@ -1566,12 +1718,12 @@ if(this.state.gender == 2){
            <form onSubmit={this.handleSubmit}>
          
         <label>
-          Plan (input 1 to 5 from lose fast to gain fast ) 
+          Plan (input 0 to 4 from lose fast to gain fast ) 
           <input type="text" value={plan} onChange={this.handleChangePlan} />
         </label><br></br><br></br>
 
         <label>
-          Active (input 1 - 5 least active - most active) 
+          Active (input 0 - 4 least active - most active) 
           <input type="text" value={active} onChange={this.handleChangeActive} />
         </label><br></br><br></br> 
        
@@ -1582,7 +1734,7 @@ if(this.state.gender == 2){
             onChange={this.handleChangeAge} />
             </label><br></br><br></br>
           
-            <label>gender (input 1 for male 2 for female) 
+            <label>gender (input 0 for male 1 for female) 
           <input
             value={gender}
             onChange={this.handleChangeGender} />
@@ -1601,11 +1753,7 @@ if(this.state.gender == 2){
              </label> <br></br><br></br>
              
              
-             <label> hscale (input 2.54 U.S/ 1 Metric) 
-            <input
-            value={hscale}
-            onChange={this.handleChangeHscale} />
-             </label><br></br><br></br>
+             
              
              <label> neck 
             <input  value={neck} 
@@ -1622,10 +1770,19 @@ if(this.state.gender == 2){
             onChange={this.handleChangeHip}/>
             </label><br></br><br></br>
 
-             <label> wscale (input 2.205 U.S/ 1 Metric)  
-            <input  value={wscale} 
-            onChange={this.handleChangeWscale}/>
+            
+
+            <label> input 0(metric) or 1(U.S)
+            <input  value={metric} 
+            onChange={this.handleChangeMetric}/>
             </label><br></br><br></br>
+              
+              <label> user ID
+            <input  value={userid} 
+            onChange={this.handleChangeUserId}/>
+            </label><br></br><br></br>
+
+            
         <input type="submit" value="Submit to save your recommendations" />
          </form><br></br>
       <MineralsAndVitamins
@@ -1658,6 +1815,7 @@ if(this.state.gender == 2){
           <WaistToHip waist={parseFloat(waist)}
           hip={parseFloat(hip)}
           gender={parseFloat(gender)} />
+           
            
            
             

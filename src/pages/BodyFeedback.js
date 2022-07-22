@@ -7,8 +7,24 @@ import {
 } from '@mui/material';
 
 import NavMenu from '../components/NavMenu';
+import { API, APIGet } from '../utils/api';
+
+
+
+APIGet('minerals').then(handleResponse
+);
+
+function handleResponse(response){
+const data = response.data;
+ 
+<p>{data}</p>
+
+}
 
 const BodyFeedback = ({results, name}) => {
+
+
+  
 
   let general = [
     {
@@ -212,7 +228,7 @@ const BodyFeedback = ({results, name}) => {
             
           </Grid>          
         </Grid>
-        
+        <handleResponse />
         <NavMenu />
       </>
     );
