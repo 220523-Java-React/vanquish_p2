@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -24,8 +24,15 @@ import {API} from './utils/api';
 function App() {
 
   API();
-  const [ results, setResults ] = useState([{REMOVE: "REMOVE THIS. FOR TEST PURPOSES ONLY"}]);
+  const [ results, setResults ] = useState([]);
   const [ name, setName ] = useState("");
+
+  // const test = [];
+ 
+  // useEffect( () => {
+  //   setResults(test)
+  // }, []);
+
   return (
     <>
       <Router>

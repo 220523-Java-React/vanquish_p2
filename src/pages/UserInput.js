@@ -1,29 +1,29 @@
 import NavMenu from "../components/NavMenu";
+import { useNavigate } from "react-router-dom";
 
 import waistimg from '../assets/images/waist.png';
 import hipimg from '../assets/images/hip.png';
 import heightimg from '../assets/images/height.png';
 import neckimg from '../assets/images/neck.png';
-import { Calculate } from "@mui/icons-material";
-import Calculator from "../utils/UpdateMinerals";
+// import Calculator from "../utils/UpdateMinerals";
 import simulation from "../utils/simulation";
 
 const UserInput = ({setResults}) => {
- /*
-  const runSimulation = () => {
-    setResults(simulation());
-  };
+  let navigate = useNavigate();
 
-  runSimulation();
-*/
+  const runSimulation = async () => {
+    let results = await simulation();
+    setResults(results);
+    navigate("/body-feedback", { replace: true });
+  };
+  
   return (
     <>
       <div style={{fontSize: '100px', marginTop: '100px'}}>User Input</div>
 
       <NavMenu />
-      <Calculator />
+      {/* <Calculator /> */}
       
-
         <form id="userinputs" className="container">
         <p>Please fill in the following below to recieve your body information and health recommendations. </p>
           <div className="mySlides">
@@ -76,7 +76,7 @@ const UserInput = ({setResults}) => {
           </div>
 
           <div className="mySlides">
-          <span class="left"><img class ="howtom" src={hipimg} /></span>
+          <span class="left"><img class ="howtom" src={hipimg} alt='' /></span>
           <span class="right">
             <div class="que">Enter your Hip Circumference</div> 
             <div class="ans"><input type="number" id="hip" placeholder="i.e. 40 (in) or 102 (cm)" name="hip" required /></div></span>
@@ -116,7 +116,7 @@ const UserInput = ({setResults}) => {
           </span>
           </div>
           <div className="mySlides"><button class="button">Enter</button> </div>
-          
+          <p onClick={runSimulation}> .</p>
         </form>
     </>
   );

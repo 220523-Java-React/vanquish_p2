@@ -8,14 +8,6 @@ import {
 
 import NavMenu from '../components/NavMenu';
 import { API, APIGet } from '../utils/api';
-import simulation from '../utils/simulation';
-
-import vitimg from '../assets/images/vitamins.png';
-import minimg from '../assets/images/minerals.png';
-import macimg from '../assets/images/macro.png';
-import genimg from '../assets/images/general.png';
-
-
 
 APIGet('minerals').then(handleResponse
 );
@@ -27,11 +19,7 @@ const data = response.data;
 
 }
 
-
 const BodyFeedback = ({results, name}) => {
-
-  results = simulation();
-
 
   // let general = [
   //   {
