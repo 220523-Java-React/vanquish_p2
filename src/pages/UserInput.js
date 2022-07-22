@@ -10,13 +10,11 @@ import simulation from "../utils/simulation";
 
 const UserInput = ({setResults}) => {
  
-/*
   const runSimulation = () => {
     setResults(simulation());
   };
 
   runSimulation();
-*/
   return (
     <>
       <div style={{fontSize: '100px', marginTop: '100px'}}>User Input</div>

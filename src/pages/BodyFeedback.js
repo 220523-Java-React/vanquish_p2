@@ -11,7 +11,6 @@ import { API, APIGet } from '../utils/api';
 import simulation from '../utils/simulation';
 
 
-
 APIGet('minerals').then(handleResponse
 );
 
