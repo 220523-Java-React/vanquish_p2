@@ -171,25 +171,38 @@ font-family: 'Fredericka the Great', cursive;
 /* .mySlides {display: none;} */
 #userinputs  div {
     background-color: #f5f5f5;
-    margin: 10px;
-    padding: 20px;
     border: none;
 }
 
 #userinputs .left {
     float: left;
     width: 50%;
+    overflow: hidden;
 }
 
 #userinputs .right {
     float: right;
     width: 50%;
+    overflow: hidden;
+}
+
+#userinputs .que {
+    width: 100%;
+    padding: 10px;
+    background-color: #3fc1c9;
+}
+
+#userinputs .ans {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 #userinputs input {
     margin: 10px;
     padding: 10px;
-    border-color:  #364f6b;
+    border-color:  #3fc1c9;
+
 }
 
 #userinputs label:hover {
@@ -304,6 +317,8 @@ font-family: 'Fredericka the Great', cursive;
 .table_field {
     border: 2px solid black !important;
 }
+
+
 
 footer {
     font-family: 'Quicksand', sans-serif;
