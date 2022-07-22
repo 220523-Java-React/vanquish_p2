@@ -9,7 +9,7 @@ const Vitamins = () => {
 
   return (
     <>
-      <div style={{fontSize: '100px', marginTop: '100px'}}>Vitamins</div>
+      <div style={{fontSize: '100px', marginTop: '100px'}}></div>
 
       <NavMenu />
         {/* {Object.keys(vitacalc).map((key, index) => {
@@ -19,11 +19,20 @@ const Vitamins = () => {
         })} */}
 <section className="fact">
       {vitamins.map((vitamin, index) => (
-          <Box key={index}>
+          <Box key={index} sx={{
+            width: 400,
+            height: 180,
+            display: 'inline-block',
+            marginBlock: 2,
+            marginRight: 6,
+            justifyContent: 'space-evenly',
+            alignItems: 'start',
+            overflow: 'hidden',
+        }}>
               <Typography variant='h4'>
                   {vitamin.name}
               </Typography>
-              <Typography>
+              <Typography variant='paragraph'>
                   {vitamin.description}
               </Typography>
               <Typography>

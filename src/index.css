@@ -397,6 +397,17 @@ font-family: 'Fredericka the Great', cursive;
     margin: auto;
 }
 
+.fact .MuiTypography-h4 {
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+.fact .MuiTypography-paragraph
+{
+    font-family: 'Quicksand', sans-serif;
+}
+
+
 footer {
     font-family: 'Quicksand', sans-serif;
     height: 50px;

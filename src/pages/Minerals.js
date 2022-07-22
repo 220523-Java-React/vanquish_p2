@@ -11,23 +11,30 @@ import BasicTable from '../components/BasicTable';
 const Minerals = () => {
   return (
     <>
-      <div style={{fontSize: '100px', marginTop: '100px'}}>Minerals</div>
+      <div style={{fontSize: '100px', marginTop: '100px'}}></div>
       <NavMenu />
-      <br></br>
-      <br></br>
+
        
         
-       
       <section className="fact">
         {minerals.map((mineral, index) => (
-          <Box key={index}>
+          <Box key={index} sx={{
+            width: 400,
+            height: 220,
+            display: 'inline-block',
+            marginBlock: 2,
+            marginRight: 6,
+            justifyContent: 'space-evenly',
+            alignItems: 'start',
+            overflow: 'hidden',
+        }}>
             <Typography variant='h4'>
                 {mineral.name}
             </Typography>
-            <Typography>
+            <Typography variant='paragraph'>
                 {mineral.description}
             </Typography>
-            <Typography>
+            <Typography >
                 For more information click&nbsp;
                 <Link href={mineral.url}>
                     here

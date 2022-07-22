@@ -26,13 +26,13 @@ const NavMenu = () => {
 
           <Grid item>
             <MaterialLink
-              to='/minerals'
+              to='/progress'
               component={RouterLink}
               underline='none'
               variant='body1'
             >
               <Typography style={{fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase', color: 'black'}}>
-                Minerals
+                Progress
               </Typography>
             </MaterialLink>
           </Grid>
@@ -52,16 +52,18 @@ const NavMenu = () => {
 
           <Grid item>
             <MaterialLink
-              to='/progress'
+              to='/minerals'
               component={RouterLink}
               underline='none'
               variant='body1'
             >
               <Typography style={{fontSize: '18px', fontWeight: 'bold', textTransform: 'uppercase', color: 'black'}}>
-                Progress
+                Minerals
               </Typography>
             </MaterialLink>
           </Grid>
+
+
 
           <Grid item>
             <MaterialLink
