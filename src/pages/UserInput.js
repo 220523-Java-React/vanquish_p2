@@ -6,9 +6,16 @@ import heightimg from '../assets/images/height.png';
 import neckimg from '../assets/images/neck.png';
 import { Calculate } from "@mui/icons-material";
 import Calculator from "../utils/UpdateMinerals";
+import simulation from "../utils/simulation";
 
 const UserInput = ({setResults}) => {
+ 
+  const runSimulation = () => {
+    setResults(simulation());
+  };
 
+  runSimulation();
+  
   return (
     <>
       <div style={{fontSize: '100px', marginTop: '100px'}}>User Input</div>
