@@ -10,6 +10,12 @@ import NavMenu from '../components/NavMenu';
 import { API, APIGet } from '../utils/api';
 import simulation from '../utils/simulation';
 
+import vitimg from '../assets/images/vitamins.png';
+import minimg from '../assets/images/minerals.png';
+import macimg from '../assets/images/macro.png';
+import genimg from '../assets/images/general.png';
+
+
 
 APIGet('minerals').then(handleResponse
 );
@@ -248,7 +254,7 @@ const BodyFeedback = ({results, name}) => {
         <Box className='feedback_featured_container'>
           <Grid container className='table_featured' justifyContent='center'>
             <Grid item xs={12} className='table_header'>
-              General Recommendations
+              General Recommendations<img src={genimg} alt="Vitamins"  className="titleimg" />
             </Grid>
 
             {results[0].map((item, index) => (
@@ -270,6 +276,8 @@ const BodyFeedback = ({results, name}) => {
             <Grid container className='table_container' justifyContent='center'>
               <Grid item xs={12} className='table_header'>
                 Vitamin Recommendations
+              <img src={vitimg} alt="Vitamins"  className="titleimg" />
+
               </Grid>
               
               {results[1].map((item, index) => (
@@ -288,7 +296,8 @@ const BodyFeedback = ({results, name}) => {
           <Grid item xs={12} lg={4}>
             <Grid container className='table_container' justifyContent='center'>
               <Grid item xs={12} className='table_header'>
-                Macronutrient Recommendations
+                Macronutrient Recommendations           
+          <img src={macimg} alt="Macro Nutrients" className="titleimg" />
               </Grid>
               
               {results[2].map((item, index) => (
@@ -307,7 +316,8 @@ const BodyFeedback = ({results, name}) => {
           <Grid item xs={12} lg={4}>
             <Grid container className='table_container' justifyContent='center'>
               <Grid item xs={12} className='table_header'>
-                Mineral Recommendations
+                Minerals Recommendations
+                <img src={minimg} alt="Minerals" className="titleimg" />
               </Grid>
               
               {results[3].map((item, index) => (
