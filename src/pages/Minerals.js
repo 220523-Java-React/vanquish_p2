@@ -18,7 +18,7 @@ const Minerals = () => {
        
         
        
-      <section>
+      <section className="fact">
         {minerals.map((mineral, index) => (
           <Box key={index}>
             <Typography variant='h4'>
