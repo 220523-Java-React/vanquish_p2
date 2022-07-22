@@ -1,20 +1,20 @@
 import NavMenu from "../components/NavMenu";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import waistimg from '../assets/images/waist.png';
 import hipimg from '../assets/images/hip.png';
 import heightimg from '../assets/images/height.png';
 import neckimg from '../assets/images/neck.png';
-import { Calculate } from "@mui/icons-material";
-import Calculator from "../utils/UpdateMinerals";
+// import Calculator from "../utils/UpdateMinerals";
 import simulation from "../utils/simulation";
 
 const UserInput = ({setResults}) => {
+  let navigate = useNavigate();
 
   const runSimulation = async () => {
     let results = await simulation();
-    console.log("RESULTS = " , results);
     setResults(results);
+    navigate("/body-feedback", { replace: true });
   };
   
   return (
@@ -24,7 +24,6 @@ const UserInput = ({setResults}) => {
       <NavMenu />
       {/* <Calculator /> */}
       
-        <p onClick={runSimulation}> HELLO IM A BUTTON</p>
         <form id="userinputs" className="container">
         <p>Please fill in the following below to recieve your body information and health recommendations. </p>
           <div className="mySlides">
@@ -57,27 +56,27 @@ const UserInput = ({setResults}) => {
           </div>
 
           <div className="mySlides">
-            <span class="left"><img class ="howtom" src={heightimg} /></span>
+            <span class="left"><img class ="howtom" src={heightimg} alt='' /></span>
             <span class="right"><div class="que">Enter your height:</div>
             <div class="ans"><input type="number" id="height" name="height" placeholder="i.e. 67 (in) or 170 (cm)" required /></div>
             </span>
           </div>
 
           <div className="mySlides">
-          <span class="left"><img class ="howtom" src={neckimg} /></span>
+          <span class="left"><img class ="howtom" src={neckimg} alt='' /></span>
           <span class="right"><div class="que">Enter your neck circumference:</div>
           <div class="ans"><input type="number" id="neck" placeholder="i.e. 14 (in) or 36 (cm)" name="neck" required /></div>
           </span>
           </div>
 
           <div className="mySlides">
-          <span class="left"><img class ="howtom" src={waistimg} /></span>
+          <span class="left"><img class ="howtom" src={waistimg} alt='' /></span>
           <span class="right"><div class="que">Enter your waist circumference:</div>
           <div class="ans"><input type="number" id="waist" placeholder="i.e. 38 (in) or 98 (cm)" required /></div></span>
           </div>
 
           <div className="mySlides">
-          <span class="left"><img class ="howtom" src={hipimg} /></span>
+          <span class="left"><img class ="howtom" src={hipimg} alt='' /></span>
           <span class="right">
             <div class="que">Enter your hip circumference:</div> 
             <div class="ans"><input type="number" id="hip" placeholder="i.e. 40 (in) or 102 (cm)" name="hip" required /></div></span>
@@ -117,7 +116,7 @@ const UserInput = ({setResults}) => {
           </span>
           </div>
           <div className="mySlides"><button class="button">Enter</button> </div>
-          
+          <p onClick={runSimulation}> .</p>
         </form>
     </>
   );

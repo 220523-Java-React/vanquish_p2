@@ -19,10 +19,6 @@ const data = response.data;
 
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 2a4410df24cfc16a616cd65e1adfbb382bedcd17
 const BodyFeedback = ({results, name}) => {
 
   // let general = [
